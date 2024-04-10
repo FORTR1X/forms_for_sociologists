@@ -5,6 +5,9 @@ import Registration from "./component/Pages/Registration/Registration";
 import Login from "./component/Pages/Login/Login";
 import User from "./component/Pages/Account/User";
 import SignInSignUp from "./component/Pages/SignInSignUp/SignInSignUp";
+import Survey from "./component/Pages/Form/Survey";
+import NewForm from "./component/Pages/Form/component/NewForm/NewForm.jsx"
+
 
 function App() {
   return (
@@ -17,6 +20,8 @@ function App() {
           {/* <Route path="login" element={<Login />}></Route> */}
           <Route path="form" element={<Login />}></Route>
           <Route path="user" element={<User />}></Route>
+          <Route path="survey" element={<Survey/>}></Route>
+          <Route path="newForm" element={<NewForm/>}></Route>
         </Routes>
       </Router>
     </div>

@@ -10,7 +10,7 @@ export default function User() {
         <div className={styles.logo_wrapper}>
           F<span>F</span>
         </div>
-        <form action="#" method="post" className="form-search">
+        <form action="" method="post" className="form-search">
           <div className={styles.search}>
             <input
               className={styles.searchFormText}

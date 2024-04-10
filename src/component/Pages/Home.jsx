@@ -12,10 +12,9 @@ import Card from "./Card";
 import { animate, motion } from "framer-motion";
 import Registration from "./Registration/Registration";
 
-
 let easing = [0.6, -0.05, 0.01, 0.99];
 
-const stagger = {
+const stagger = { 
   animate: {
     transition: {
       delayChildren: 0.4,
@@ -240,7 +239,7 @@ export default function Home() {
               className={styles.first}
             >
               <motion.span variants={letter} className="">
-                с 
+                с
               </motion.span>
               <motion.span variants={letter}>о</motion.span>
               <motion.span variants={letter}>ц</motion.span>
@@ -304,14 +303,19 @@ export default function Home() {
               </motion.div>
             </NavLink>
 
-            <motion.div
-              className={`${styles.btn} ${styles.btn_secondary}`}
-              variants={btnGroup}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <NavLink 
+              style={{ color: "inherit", textDecoration: "inherit" }}
+              to="/survey"
             >
-              Создать опрос
-            </motion.div>
+              <motion.div
+                className={`${styles.btn} ${styles.btn_secondary}`}
+                variants={btnGroup}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Создать опрос
+              </motion.div>
+            </NavLink>
           </motion.div>
 
           <motion.div className={styles.review_container} variants={stagger}>
