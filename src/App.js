@@ -7,6 +7,7 @@ import User from "./component/Pages/Account/User";
 import SignInSignUp from "./component/Pages/SignInSignUp/SignInSignUp";
 import Survey from "./component/Pages/Form/Survey";
 import NewForm from "./component/Pages/Form/component/NewForm/NewForm.jsx"
+import AllTeam from "./component/Pages/Account/AllTeam.jsx";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="user" element={<User />}></Route>
           <Route path="survey" element={<Survey/>}></Route>
           <Route path="newForm" element={<NewForm/>}></Route>
+          <Route path="allTeam" element={<AllTeam/>}></Route>
         </Routes>
       </Router>
     </div>

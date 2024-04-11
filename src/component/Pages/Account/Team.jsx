@@ -3,6 +3,7 @@ import styles from "./User.module.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { NavLink } from "react-router-dom";
 
 const data = [
   {
@@ -43,11 +44,20 @@ export default function Team() {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
+    arrows: true,
   };
   return (
     <div>
-      <h1>Команды</h1>
+      <div className={styles.team_header}>
+        <h1>Команды</h1>
+        <NavLink to="/allTeam">
+        <a href="" className={styles.user_button}>
+          Перейти
+        </a>
+        </NavLink>
+      </div>
+
       <div className={styles.team}>
         <div className={styles.team_wrapper}>
           <Slider {...settings}>

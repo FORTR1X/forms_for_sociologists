@@ -10,6 +10,15 @@ $black: #000000;
 $white: #fff;
 $light_grey: #dadada;
 
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+button {
+  border: none;
+}
+
 .dflex {
   display: flex;
   justify-content: center;
@@ -34,6 +43,7 @@ body {
   justify-content: space-between;
   padding: 1% 5%;
   border-bottom: 1px solid $light_grey;
+  margin-bottom: 50px;
   .logo_wrapper {
     font-size: 32px;
     font-weight: 600;
@@ -71,9 +81,15 @@ body {
   }
 }
 
+.team_header {
+  @extend .dflex;
+  justify-content: space-between;
+}
+
 .team {
   width: 90%;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 .team_wrapper {
@@ -81,7 +97,7 @@ body {
 }
 
 .team_card {
-  height: 450px;
+  /* height: 450px; */
 }
 
 .team_pic {
@@ -108,20 +124,15 @@ body {
   background-color: #dadada;
 }
 
- .team_card > div {
-  margin: 0 10px;
-}
-/*
-.slick-slide {
-  margin: 0 27px;
+.team_card > div {
+  margin: 0 20px;
 }
 
-.slick-list {
-  margin: 0 -27px;
-} */
-/* .slick-slide {
-  margin: 0 10px;
-} */
+.slick-prev::before,
+.slick-next::before {
+  box-shadow: 10px 5px 5px red;
+  color: #14da8f;
+}
 
 .survey {
   width: 90%;
