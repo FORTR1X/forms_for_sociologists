@@ -2,10 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import styles from "./User.module.scss";
+import Team from "./Team";
+import UserSurvey from "./UserSurvey";
 
 export default function User() {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <div className={styles.header}>
         <div className={styles.logo_wrapper}>
           F<span>F</span>
@@ -41,9 +43,13 @@ export default function User() {
             </button>
           </div>
         </form>
-        <div className={styles.userPanel}>
-          US
-        </div>
+        <div className={styles.userPanel}>US</div>
+      </div>
+      <div className={styles.team}>
+        <Team />
+      </div>
+      <div className={styles.survey}>
+        <UserSurvey />
       </div>
     </div>
   );
