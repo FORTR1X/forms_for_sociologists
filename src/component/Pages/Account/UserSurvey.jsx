@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./User.module.scss";
+import Button from "./Button";
 
 const data = [
   {
@@ -34,9 +35,7 @@ export default function UserSurvey() {
               <a href="" className={styles.survey_name}>
                 {d.review}
               </a>
-              <a href="" className={styles.user_button}>
-                Перейти
-              </a>
+              <Button text={'Перейти'} />
             </div>
           </div>
         ))}

@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NavLink } from "react-router-dom";
+import Button from "./Button";
 
 const data = [
   {
@@ -52,9 +53,7 @@ export default function Team() {
       <div className={styles.team_header}>
         <h1>Команды</h1>
         <NavLink to="/allTeam">
-        <a href="" className={styles.user_button}>
-          Перейти
-        </a>
+          <Button text={"Перейти"} />
         </NavLink>
       </div>
 

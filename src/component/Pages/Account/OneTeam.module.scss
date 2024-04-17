@@ -37,59 +37,25 @@ body {
   width: 100%;
   margin: 0px auto;
 }
-
-
-.team_header {
-  @extend .dflex;
-  justify-content: space-between;
-}
-
-.team {
+.team_description{
   width: 90%;
-  margin: auto;
-  margin-bottom: 50px;
+  margin: 0px auto;
 }
 
-.team_wrapper {
-  margin-top: 20px;
-}
-
-.team_card {
-  /* height: 450px; */
-}
-
-.team_pic {
-  background-color: #14da8f;
+.team_item{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 56px;
 }
 
-.team_pic img {
-  height: 44px;
-  width: 44px;
-  border-radius: 100%;
-}
-
-.team_items {
+.team_text{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 4px;
-  background-color: #dadada;
+  margin-left: 30px;
+  gap: 30px;
 }
 
-.team_card > div {
-  margin: 0 20px;
-}
-
-.slick-prev::before,
-.slick-next::before {
-  box-shadow: 10px 5px 5px red;
-  color: #14da8f;
+.team_title{
+  @extend .dflex;
+  justify-content: space-between;
 }
 
 .survey {
@@ -128,14 +94,4 @@ body {
   font-size: 20px;
   line-height: 30px;
   margin: 0px 0px 10px 0px;
-}
-
-.user_button {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
-  padding: 0px 20px;
-  line-height: 40px;
-  background-color: #14da8f;
-  justify-self: start;
 }

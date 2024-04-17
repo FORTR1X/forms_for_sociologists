@@ -8,6 +8,8 @@ import SignInSignUp from "./component/Pages/SignInSignUp/SignInSignUp";
 import Survey from "./component/Pages/Form/Survey";
 import NewForm from "./component/Pages/Form/component/NewForm/NewForm.jsx"
 import AllTeam from "./component/Pages/Account/AllTeam.jsx";
+import OneTeam from "./component/Pages/Account/OneTeam.jsx";
+import NewTeam from "./component/Pages/Account/NewTeam.jsx";
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
           <Route path="survey" element={<Survey/>}></Route>
           <Route path="newForm" element={<NewForm/>}></Route>
           <Route path="allTeam" element={<AllTeam/>}></Route>
+          <Route path="oneTeam" element={<OneTeam/>}></Route>
+          <Route path="newTeam" element={<NewTeam/>}></Route>
         </Routes>
       </Router>
     </div>
