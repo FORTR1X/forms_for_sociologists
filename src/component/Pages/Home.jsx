@@ -14,7 +14,7 @@ import Registration from "./Registration/Registration";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
-const stagger = { 
+const stagger = {
   animate: {
     transition: {
       delayChildren: 0.4,
@@ -138,6 +138,7 @@ const header = {
 export default function Home() {
   return (
     <motion.div initial="initial" animate="animate">
+      <a href="https://hard-dodo-96.telebit.io/auth/google_oauth2/callback">Кнопка для Андрея</a>
       <motion.header variants={stagger}>
         <motion.div className={styles.logo_wrapper} variants={header}>
           Form<span>form</span>
@@ -303,7 +304,7 @@ export default function Home() {
               </motion.div>
             </NavLink>
 
-            <NavLink 
+            <NavLink
               style={{ color: "inherit", textDecoration: "inherit" }}
               to="/survey"
             >

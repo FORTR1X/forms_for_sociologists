@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "./SignInSignUp.module.scss";
 
+import { GoogleLogin } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
+
 export default function SignInSignUp() {
   const [btnState, setBtnState] = useState(false);
   const [btnState2, setBtnState2] = useState(false);
@@ -9,16 +12,25 @@ export default function SignInSignUp() {
     setBtnState((btnState) => !btnState);
   }
 
-  function handleClick2() { 
+  function handleClick2() {
     setBtnState2((btnState2) => !btnState2);
   }
 
-
   return (
     <div className={styles.wrapper}>
+      <GoogleLogin
+        onSuccess={(credentialResponse) => {
+          const credentialResponseDecoded = jwtDecode(credentialResponse.credential);
+          console.log(credentialResponseDecoded);
+        }}
+        onError={() => {
+          console.log("Login Failed");
+        }}
+      />
+
       <div
         className={`${styles.container} ${btnState ? styles.signUpMode : ""} 
-        ${btnState2 ? styles.signUpMode2 : "" }
+        ${btnState2 ? styles.signUpMode2 : ""}
         `}
       >
         <div className={styles.SigninSignup}>
