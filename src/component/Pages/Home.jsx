@@ -138,7 +138,9 @@ const header = {
 export default function Home() {
   return (
     <motion.div initial="initial" animate="animate">
+
       <a href="https://hard-dodo-96.telebit.io/auth/google_oauth2/callback">Кнопка для Андрея</a>
+      
       <motion.header variants={stagger}>
         <motion.div className={styles.logo_wrapper} variants={header}>
           Form<span>form</span>
@@ -213,6 +215,7 @@ export default function Home() {
               </motion.span>
               <motion.span variants={letter}>л</motion.span>
               <motion.span variants={letter}>я</motion.span>
+              <motion.span variants={letter} className={styles.second}> </motion.span>
             </motion.span>
 
             <motion.span
@@ -256,6 +259,7 @@ export default function Home() {
               <motion.span variants={letter}>к</motion.span>
               <motion.span variants={letter}>и</motion.span>
               <motion.span variants={letter}>х</motion.span>
+              <motion.span variants={letter} className={styles.second}> </motion.span>
             </motion.span>
 
             <motion.span
@@ -292,10 +296,10 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Зарегестрироваться
+                Зарегистрироваться
                 <IconContext.Provider
                   value={{
-                    color: "#14da8f",
+                    color: "white",
                     size: "25px",
                   }}
                 >

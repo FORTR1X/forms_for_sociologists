@@ -4,9 +4,13 @@ import styles from "./SignInSignUp.module.scss";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 
+import axios from "axios";
+
 export default function SignInSignUp() {
   const [btnState, setBtnState] = useState(false);
   const [btnState2, setBtnState2] = useState(false);
+
+  // const token = document.querySelector('[name=csrf-token]').content
 
   function handleClick() {
     setBtnState((btnState) => !btnState);
@@ -18,16 +22,6 @@ export default function SignInSignUp() {
 
   return (
     <div className={styles.wrapper}>
-      <GoogleLogin
-        onSuccess={(credentialResponse) => {
-          const credentialResponseDecoded = jwtDecode(credentialResponse.credential);
-          console.log(credentialResponseDecoded);
-        }}
-        onError={() => {
-          console.log("Login Failed");
-        }}
-      />
-
       <div
         className={`${styles.container} ${btnState ? styles.signUpMode : ""} 
         ${btnState2 ? styles.signUpMode2 : ""}
@@ -53,10 +47,26 @@ export default function SignInSignUp() {
               />
             </div>
             <input type="submit" value="SignIn" className={styles.btn} />
-            <p className={styles.socialText}>Или войдите с помощью соцсетей</p>
+            {/* <p className={styles.socialText}>Или войдите с помощью соцсетей</p> */}
             <div className={styles.socialMedia}>
               {/* <a href="#" className={styles.socialIcon}></a> */}
-              тут могут быть иконки соцсетей
+              <GoogleLogin
+                onSuccess={(credentialResponse) => {
+                  const credentialResponseDecoded = jwtDecode(
+                    credentialResponse.credential
+                  );
+                  console.log(credentialResponseDecoded);
+
+                  // axios.defaults.headers.common['X-CSRF-TOKEN'] = token
+                  axios({
+                    method: "get",
+                    url: "https://hard-dodo-96.telebit.io/auth/google_oauth2/callback",
+                  });
+                }}
+                onError={() => {
+                  console.log("Login Failed");
+                }}
+              />
             </div>
             <p className={styles.accountText}>
               Нет аккаунта?
@@ -93,9 +103,25 @@ export default function SignInSignUp() {
               />
             </div>
             <input type="submit" value="SignUp" className={styles.btn} />
-            <p className={styles.socialText}>Или войдите с помощью соцсетей</p>
+            {/* <p className={styles.socialText}>Или войдите с помощью соцсетей</p> */}
             <div className={styles.socialMedia}>
-              тут могут быть иконки соцсетей
+              <GoogleLogin
+                onSuccess={(credentialResponse) => {
+                  const credentialResponseDecoded = jwtDecode(
+                    credentialResponse.credential
+                  );
+                  console.log(credentialResponseDecoded);
+
+                  // axios.defaults.headers.common['X-CSRF-TOKEN'] = token
+                  axios({
+                    method: "get",
+                    url: "https://hard-dodo-96.telebit.io/auth/google_oauth2/callback",
+                  });
+                }}
+                onError={() => {
+                  console.log("Login Failed");
+                }}
+              />
             </div>
             <p className={styles.accountText}>
               Есть аккаунт?
