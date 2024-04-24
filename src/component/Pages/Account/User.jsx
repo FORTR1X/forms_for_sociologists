@@ -16,6 +16,6 @@ export default function User() {
       <div className={styles.survey}>
         <UserSurvey />
       </div>
-    </div>
+    </div> 
   );
 }

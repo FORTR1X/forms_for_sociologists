@@ -64,6 +64,33 @@ const hoverEffect = {
   },
 };
 
+const data = [
+  {
+    title: "Виды представления вопросов",
+    description: "Отображайте вопросы в том виде, в котором считаете нужным",
+  },
+  {
+    title: "Время прохождения опроса",
+    description: "Задавайте даты и время на прохождение опроса",
+  },
+  {
+    title: "Командная работа",
+    description: "Создавайте группы для совместной работы",
+  },
+  {
+    title: "Встроенная аналитика ответов",
+    description: "Удобное представление результатов опроса",
+  },
+  {
+    title: "Без подписок и предоплат",
+    description: "Полностью бесплатный функционал",
+  },
+  {
+    title: "Удобный аккаунт",
+    description: "Вся необходимая информация хранится в одном месте",
+  },
+];
+
 export default function Card() {
   return (
     <motion.div className={styles.service_container}>
@@ -83,7 +110,7 @@ export default function Card() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
         >
-          Экономьте ваше время и <br /> нервы с помощью нашего сервиса
+          Экономьте ваше время и нервы с помощью нашего сервиса
         </motion.h2>
       </div>
 
@@ -95,34 +122,35 @@ export default function Card() {
         whileInView="show"
         viewport={{ once: false }}
       >
-        <motion.div className={styles.card} variants={item}>
-          <motion.span className={styles.service_icon} style={{ backgroundColor: "ddfbf9" }} variants={hoverEffect} whileHover="whileHover" whileTap="whileTap">
-            <IconContext.Provider
-              value={{
-                color: "#14da8f",
-                size: "22px",
-              }}
-            >
-              <IoMailOutline />
-            </IconContext.Provider>
-          </motion.span>
-          <h3>
-            Гибкая система <br /> настроек
-          </h3>
-          <a href="#">
-            <span>Learn more</span>
-            <IconContext.Provider
-              value={{
-                color: "#14da8f",
-                size: "18px",
-              }}
-            >
-              <IoChevronForward />
-            </IconContext.Provider>
-          </a>
-        </motion.div>
-
-        <div className={`${styles.card} ${styles.dark}`}>
+        {data.map((d) => (
+          <motion.div className={styles.card} variants={item}>
+                {/* <motion.span className={styles.service_icon} style={{ backgroundColor: "ddfbf9" }} variants={hoverEffect} whileHover="whileHover" whileTap="whileTap">
+              <IconContext.Provider
+                value={{
+                  color: "#14da8f",
+                  size: "22px",
+                }}
+              >
+                <IoMailOutline />
+              </IconContext.Provider>
+            </motion.span> */}
+              <h3>{d.title}</h3>
+              <h4>{d.description}</h4>
+                {/* <a href="#">
+              <span>Learn more</span>
+              <IconContext.Provider
+                value={{
+                  color: "#14da8f",
+                  size: "18px",
+                }}
+              >
+                <IoChevronForward />
+              </IconContext.Provider>
+            </a> */}
+          </motion.div>
+        ))}
+        
+        {/* <div className={`${styles.card} ${styles.dark}`}>
           <img
             src={process.env.PUBLIC_URL + "/images/line.png"}
             alt="line"
@@ -155,7 +183,7 @@ export default function Card() {
               <IoChevronForward />
             </IconContext.Provider>
           </a>
-        </div>
+        </div> */}
       </motion.div>
     </motion.div>
   );

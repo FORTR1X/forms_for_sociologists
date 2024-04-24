@@ -1,18 +1,21 @@
 import React from "react";
 import styles from "./UserHeader.module.scss";
+import { NavLink } from "react-router-dom";
 
 export default function UserHeader() {
   return (
     <div>
       <div className={styles.header}>
-        <div className={styles.logo_wrapper}>
-          F<span>F</span>
-        </div>
+        <NavLink to="/">
+          <div className={styles.logo_wrapper}>
+            F<span>F</span>
+          </div>
+        </NavLink>
         <form action="" method="post" className="form-search">
-          <div className={styles.search}>
+          {/* <div className={styles.search}>
             <input
               className={styles.searchFormText}
-              required
+              required 
               type="text"
               id="search"
               name="search"
@@ -37,7 +40,7 @@ export default function UserHeader() {
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
         </form>
         <div className={styles.userPanel}>US</div>
       </div>

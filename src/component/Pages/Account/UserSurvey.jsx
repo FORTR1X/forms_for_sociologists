@@ -4,17 +4,17 @@ import Button from "./Button";
 
 const data = [
   {
-    img: `..//images/pink.jpg`,
+    img: `..//images/7.jpg`,
     review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
       каков ваш психологический возраст`,
   },
   {
-    img: `..//images/pink.jpg`,
+    img: `..//images/8.jpg`,
     review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
       каков ваш психологический возраст`,
   },
   {
-    img: `..//images/pink.jpg`,
+    img: `..//images/9.jpg`,
     review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
       каков ваш психологический возраст`,
   },
@@ -23,7 +23,7 @@ const data = [
 export default function UserSurvey() {
   return (
     <div>
-      <h1>Все опросы</h1>
+      <h2 className={styles.survey_header}>Все опросы</h2>
 
       <div className={styles.survey_items}>
         {data.map((d) => (

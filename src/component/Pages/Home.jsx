@@ -17,7 +17,7 @@ let easing = [0.6, -0.05, 0.01, 0.99];
 const stagger = {
   animate: {
     transition: {
-      delayChildren: 0.4,
+      delayChildren: 0.4, 
       staggerChildren: 0.2,
       staggerDirection: 1,
     },
@@ -138,55 +138,34 @@ const header = {
 export default function Home() {
   return (
     <motion.div initial="initial" animate="animate">
+      {/* <a href="https://hard-dodo-96.telebit.io/auth/google_oauth2/callback">Кнопка для Андрея</a> */}
 
-      <a href="https://hard-dodo-96.telebit.io/auth/google_oauth2/callback">Кнопка для Андрея</a>
-      
       <motion.header variants={stagger}>
         <motion.div className={styles.logo_wrapper} variants={header}>
           Form<span>form</span>
         </motion.div>
         <motion.div className={styles.menu_container} variants={stagger}>
-          <motion.span variants={header}>
+          <motion.div variants={header}>
             <IconContext.Provider
               value={{
                 color: "#000",
                 size: "18px",
                 className: "icons_container",
               }}
-            >
-              <div className={styles.icon}>
-                <FaBehance />
-              </div>
-              <div className={styles.icon}>
-                <FaDribbble />
-              </div>
-            </IconContext.Provider>
-          </motion.span>
+            ></IconContext.Provider>
+          </motion.div>
 
-          <motion.span variants={header}>
+          <motion.div variants={header}>
             <NavLink
+              className={styles.menu_user}
               style={{ color: "inherit", textDecoration: "inherit" }}
               to="/user"
             >
-              <IconContext.Provider
-                value={{
-                  color: "#000",
-                  size: "18px",
-                }}
-              >
-                <div className={styles.icon}>
-                  <IoMailOpenOutline />
-                  пользователь
-                </div>
-              </IconContext.Provider>
+              Войти
             </NavLink>
-          </motion.span>
+          </motion.div>
 
-          <motion.span className={styles.menu} variants={header}>
-            {/* <span></span> */}
-            {/* <span></span> */}
-            {/* <span></span> */}
-          </motion.span>
+          <motion.div className={styles.menu} variants={header}></motion.div>
         </motion.div>
       </motion.header>
 
@@ -215,7 +194,9 @@ export default function Home() {
               </motion.span>
               <motion.span variants={letter}>л</motion.span>
               <motion.span variants={letter}>я</motion.span>
-              <motion.span variants={letter} className={styles.second}> </motion.span>
+              <motion.span variants={letter} className={styles.second}>
+                {" "}
+              </motion.span>
             </motion.span>
 
             <motion.span
@@ -259,7 +240,9 @@ export default function Home() {
               <motion.span variants={letter}>к</motion.span>
               <motion.span variants={letter}>и</motion.span>
               <motion.span variants={letter}>х</motion.span>
-              <motion.span variants={letter} className={styles.second}> </motion.span>
+              <motion.span variants={letter} className={styles.second}>
+                {" "}
+              </motion.span>
             </motion.span>
 
             <motion.span
@@ -281,7 +264,7 @@ export default function Home() {
           </motion.h2>
 
           <motion.p variants={fadeInUp}>
-            Создавайте опросы с гибкой системой опросов <br /> и загружайте их в
+            Создавайте опросы с гибкой системой настроек и загружайте их в
             удобном вам формате.
           </motion.p>
 
@@ -399,8 +382,6 @@ export default function Home() {
 
         <motion.div className={styles.right_content_wrapper}>
           <motion.img
-            width={500}
-            height={500}
             src={process.env.PUBLIC_URL + "/images/main_picture.jpg"}
             alt="главная картинка"
             initial={{ x: 200, opacity: 0 }}

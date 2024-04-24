@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const data = [
   {
     name: "ПИЗДЕСЬ",
-    img: `..//images/pink.jpg`,
+    img: `..//images/1.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
   },
 ];
@@ -15,17 +15,17 @@ const data = [
 const person = [
   {
     name: "Вася Иванов",
-    img: `..//images/pink.jpg`,
+    img: `..//images/4.jpg`,
     review: `Lorem ipsum`,
   },
   {
     name: "Иванов Вася",
-    img: `..//images/pink.jpg`,
+    img: `..//images/5.jpg`,
     review: `Lorem ipsum`,
   },
   {
     name: "Иван Васильев",
-    img: `..//images/pink.jpg`,
+    img: `..//images/6.jpg`,
     review: `Lorem ipsum`,
   },
 ];
@@ -33,34 +33,34 @@ const person = [
 const team = [
   {
     name: "Пишки",
-    img: `..//images/pink.jpg`,
+    img: `..//images/1.jpg`,
     review: `Lorem ipsum`,
   },
   {
     name: "Исы",
-    img: `..//images/pink.jpg`,
+    img: `..//images/2.jpg`,
     review: `Lorem ipsum`,
   },
   {
     name: "Пины",
-    img: `..//images/pink.jpg`,
+    img: `..//images/3.jpg`,
     review: `Lorem ipsum`,
   },
 ];
 
 const team_survey = [
   {
-    img: `..//images/pink.jpg`,
+    img: `..//images/7.jpg`,
     review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
       каков ваш психологический возраст`,
   },
   {
-    img: `..//images/pink.jpg`,
+    img: `..//images/8.jpg`,
     review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
       каков ваш психологический возраст`,
   },
   {
-    img: `..//images/pink.jpg`,
+    img: `..//images/9.jpg`,
     review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
       каков ваш психологический возраст`,
   },
@@ -78,19 +78,15 @@ export default function OneTeam() {
               <img src={d.img} alt="" className="" />
             </a>
             <div className={styles.team_text}>
-              <a href="" className={styles.team_name}>
-                {d.name} <Button text={"Редактировать"} />
-              </a>
-              <a href="" className={styles.team_name}>
-                {d.review} <Button text={"Редактировать"} />
-              </a>
+              {d.name} <Button text={"Редактировать"} />
+              {d.review} <Button text={"Редактировать"} />
             </div>
           </div>
         ))}
 
         <div className={styles.team_partisipants}>
           <div className={styles.team_title}>
-            <h1>Участники команды</h1>
+            <h2>Участники команды</h2>
             <Button text={"Добавить участника"} />
           </div>
 
@@ -118,7 +114,7 @@ export default function OneTeam() {
 
         <div className={styles.team_team}>
           <div className={styles.team_title}>
-            <h1>Команды команды</h1>
+            <h2>Команды команды</h2>
             <Button text={"Добавить команду"} />
           </div>
 

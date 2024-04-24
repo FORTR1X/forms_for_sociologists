@@ -7,32 +7,32 @@ import { NavLink } from "react-router-dom";
 const data = [
   {
     name: "ПИЗДЕСЬ",
-    img: `..//images/pink.jpg`,
+    img: `..//images/1.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
   },
   {
     name: "ПИЗДЕСЬ",
-    img: `..//images/yellow.jpg`,
+    img: `..//images/3.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
   },
   {
     name: "ПИЗДЕСЬ",
-    img: `..//images/broun.jpg`,
+    img: `..//images/2.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
   },
   {
     name: "ПИЗДЕСЬ",
-    img: `..//images/pink.jpg`,
+    img: `..//images/3.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
   },
   {
     name: "ПИЗДЕСЬ",
-    img: `..//images/yellow.jpg`,
+    img: `..//images/1.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
   },
   {
     name: "ПИЗДЕСЬ",
-    img: `..//images/broun.jpg`,
+    img: `..//images/3.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
   },
 ];
@@ -44,7 +44,7 @@ export default function AllTeam() {
 
       <div className={styles.survey}>
         <div className={styles.team_header}>
-          <h1>Все команды</h1>
+          <h2>Все команды</h2>
           <NavLink to="/newTeam">
             <Button text={"Создать команду"} />
           </NavLink>

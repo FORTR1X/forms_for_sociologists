@@ -33,11 +33,19 @@ body {
   overflow-x: hidden;
 }
 
+h2 {
+  font-size: 1.8vw;
+  font-weight: 400;
+  color: $black;
+  margin-top: 20px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
 .wrapper {
   width: 100%;
   margin: 0px auto;
 }
-
 
 .team_header {
   @extend .dflex;
@@ -47,19 +55,25 @@ body {
 .team {
   width: 90%;
   margin: auto;
-  margin-bottom: 50px;
-}
-
-.team_wrapper {
+  margin-bottom: 30px;
   margin-top: 20px;
 }
 
 .team_card {
-  /* height: 450px; */
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  top: 0;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    cursor: pointer;
+    top: -5px;
+  }
 }
 
 .team_pic {
-  background-color: #14da8f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,7 +93,6 @@ body {
   align-items: center;
   gap: 1rem;
   padding: 4px;
-  background-color: #dadada;
 }
 
 .team_card > div {
@@ -90,6 +103,11 @@ body {
 .slick-next::before {
   box-shadow: 10px 5px 5px red;
   color: #14da8f;
+}
+
+.survey_header{
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .survey {
@@ -131,11 +149,12 @@ body {
 }
 
 .user_button {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
-  padding: 0px 20px;
-  line-height: 40px;
-  background-color: #14da8f;
-  justify-self: start;
+  padding: 0.4em 1em;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 0.5em;
+  background-color: $white;
+  color: $black;
+  outline: 2px solid $dark_green;
+  text-align: center;
 }

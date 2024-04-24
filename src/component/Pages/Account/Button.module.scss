@@ -1,31 +1,41 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  $light_green: #effffa;
-  $dark_green: #14da8f;
-  $black: #000000;
-  $white: #fff;
-  $light_grey: #dadada;
-  
-  a {
-    text-decoration: none;
-    color: #000000;
-  }
-  
-  button {
-    border: none;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$light_green: #effffa;
+$dark_green: #14da8f;
+$black: #000000;
+$white: #fff;
+$light_grey: #dadada;
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+button {
+  border: none;
+}
 
 .user_button {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
-  padding: 0px 20px;
-  line-height: 40px;
-  background-color: #14da8f;
-  justify-self: start;
+  padding: 0.4em 1em;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 0.5em;
+  background-color: $white;
+  color: $black;
+  outline: 2px solid $dark_green;
+  text-align: center;
+
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  top: 0;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -10px;
+    cursor: pointer;
+    top: -1px;
+  }
 }

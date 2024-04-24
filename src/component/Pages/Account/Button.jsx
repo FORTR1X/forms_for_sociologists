@@ -7,6 +7,6 @@ export default function Button({text}) {
       <a href="" className={styles.user_button}>
         {text}
       </a>
-    </div>
+    </div> 
   );
 }

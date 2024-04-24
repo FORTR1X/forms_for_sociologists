@@ -31,7 +31,7 @@ export default function SignInSignUp() {
           <form action="#" className={styles.SignInForm}>
             <h2 className={styles.title}>Войти</h2>
             <div className={styles.inputField}>
-              <i className={styles.FaUser}>K</i>
+              <i className={styles.FaUser}></i>
               <input
                 className={styles.inputS}
                 type="text"
@@ -46,7 +46,7 @@ export default function SignInSignUp() {
                 placeholder="Ваш пароль"
               />
             </div>
-            <input type="submit" value="SignIn" className={styles.btn} />
+            <input type="submit" value="Войти" className={styles.btn} />
             {/* <p className={styles.socialText}>Или войдите с помощью соцсетей</p> */}
             <div className={styles.socialMedia}>
               {/* <a href="#" className={styles.socialIcon}></a> */}
@@ -59,8 +59,8 @@ export default function SignInSignUp() {
 
                   // axios.defaults.headers.common['X-CSRF-TOKEN'] = token
                   axios({
-                    method: "get",
-                    url: "https://hard-dodo-96.telebit.io/auth/google_oauth2/callback",
+                    method: "post",
+                    url: "https://hard-dodo-96.telebit.io/users/auth/google_oauth2",
                   });
                 }}
                 onError={() => {
@@ -71,7 +71,7 @@ export default function SignInSignUp() {
             <p className={styles.accountText}>
               Нет аккаунта?
               <a href="#" onClick={handleClick2} className={styles.signUpBtn2}>
-                Sign up
+                Войти
               </a>
             </p>
           </form>
@@ -102,7 +102,7 @@ export default function SignInSignUp() {
                 placeholder="Ваш пароль"
               />
             </div>
-            <input type="submit" value="SignUp" className={styles.btn} />
+            <input type="submit" value="Регистрация" className={styles.btn} />
             {/* <p className={styles.socialText}>Или войдите с помощью соцсетей</p> */}
             <div className={styles.socialMedia}>
               <GoogleLogin
@@ -126,7 +126,7 @@ export default function SignInSignUp() {
             <p className={styles.accountText}>
               Есть аккаунт?
               <a href="#" onClick={handleClick2} className={styles.signInBtn2}>
-                Sign in
+                Войти
               </a>
             </p>
           </form>
@@ -136,40 +136,36 @@ export default function SignInSignUp() {
             <div className={styles.content}>
               <h3 className={styles.panelTitle}>Уже зарегистрированны?</h3>
               <p className={styles.panelText}>
-                Уважаю, братан. Так ты это, заходи если чо, щас анимация будет
-                крутая
+                Войдите с помощью логина и пароля или с помощью Google
               </p>
               <button
                 onClick={handleClick}
                 id="sigInBtn"
                 className={styles.btn}
               >
-                Войти
+                Вход
               </button>
             </div>
-            <img
-              src="/images/main_picture.jpg"
-              className={styles.image}
-              alt=""
-            />
+            <img src="/images/exit.png" className={styles.image} alt="" />
           </div>
           <div className={`${styles.panel} ${styles.rightPanel}`}>
             <div className={styles.content}>
-              <h3 className={styles.panelTitle}>Не зарегистрированны?</h3>
+              <h3 className={styles.panelTitle}>
+                Все еще не зарегистрированны?
+              </h3>
               <p className={styles.panelText}>
-                Не уважаю, братан. Так ты это, заходи если чо, щас анимация
-                будет крутая
+                Создайте аккаунт или зайдите с помощью Google
               </p>
               <button
                 onClick={handleClick}
                 id="signUpBtn"
                 className={styles.btn}
               >
-                Зарегитрироваться
+                Регистрация
               </button>
             </div>
             <img
-              src="/images/main_picture.jpg"
+              src="/images/registration.png"
               className={styles.image}
               alt=""
             />

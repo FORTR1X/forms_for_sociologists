@@ -33,27 +33,47 @@ body {
   overflow-x: hidden;
 }
 
+h2 {
+  font-size: 1.8vw;
+  font-weight: 400;
+  color: $black;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
 .wrapper {
   width: 100%;
   margin: 0px auto;
 }
-.team_description{
+.team_description {
   width: 90%;
   margin: 0px auto;
 }
 
-.team_item{
+
+
+.team_item {
   display: flex;
 }
 
-.team_text{
+.team_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.team_text {
   display: flex;
   flex-direction: column;
   margin-left: 30px;
   gap: 30px;
 }
 
-.team_title{
+
+.team_title {
   @extend .dflex;
   justify-content: space-between;
 }
@@ -67,7 +87,7 @@ body {
   display: grid;
   column-gap: 30px;
   row-gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   /* grid-auto-rows: 1fr; */
 }
 
