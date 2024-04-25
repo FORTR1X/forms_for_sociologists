@@ -10,7 +10,12 @@ export default function UserHeader() {
           <div className={styles.logo_wrapper}>
             F<span>F</span>
           </div>
-        </NavLink>
+        </NavLink> 
+
+        <NavLink to="/newTeam">Создать команду</NavLink>
+        <NavLink to="/survey">Создать опрос</NavLink>
+        <NavLink to="/allTeam">Все команды</NavLink>
+
         <form action="" method="post" className="form-search">
           {/* <div className={styles.search}>
             <input

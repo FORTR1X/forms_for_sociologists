@@ -87,7 +87,9 @@ export default function OneTeam() {
         <div className={styles.team_partisipants}>
           <div className={styles.team_title}>
             <h2>Участники команды</h2>
-            <Button text={"Добавить участника"} />
+            <NavLink to="/addPart">
+              <Button text={"Добавить участника"} />
+            </NavLink>
           </div>
 
           <div className={styles.survey_items}>
@@ -114,7 +116,7 @@ export default function OneTeam() {
 
         <div className={styles.team_team}>
           <div className={styles.team_title}>
-            <h2>Команды команды</h2>
+            <h2>Группы участников</h2>
             <Button text={"Добавить команду"} />
           </div>
 

@@ -11,6 +11,7 @@ import AllTeam from "./component/Pages/Account/AllTeam.jsx";
 import OneTeam from "./component/Pages/Account/OneTeam.jsx";
 import NewTeam from "./component/Pages/Account/NewTeam.jsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import AddPartisipiant from "./component/Pages/Account/add/AddPartisipiant.jsx";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="allTeam" element={<AllTeam />}></Route>
             <Route path="oneTeam" element={<OneTeam />}></Route>
             <Route path="newTeam" element={<NewTeam />}></Route>
+            <Route path="addPart" element={<AddPartisipiant />}></Route>
           </Routes>
         </Router>
       </div>

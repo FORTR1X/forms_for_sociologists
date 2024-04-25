@@ -1,0 +1,41 @@
+$light_green: #effffa;
+$dark_green: #14da8f;
+$light_grey: #dadada;
+$dark_grey: #3e3e3e;
+$black: #000000;
+$white: #fff;
+
+
+.uploader{
+color: #14da8f;
+}
+
+.file_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed $dark_green;
+  height: 150px;
+  width: 300px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.uploaded_row {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: $light_grey;
+  margin-bottom: 20px;
+}
+
+.uploaded_content{
+    display: flex;
+    align-items: center;
+}
+

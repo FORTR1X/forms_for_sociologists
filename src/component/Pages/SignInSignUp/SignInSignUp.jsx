@@ -34,7 +34,7 @@ export default function SignInSignUp() {
               <i className={styles.FaUser}></i>
               <input
                 className={styles.inputS}
-                type="text"
+                type="text" 
                 placeholder="Ваше имя"
               />
             </div>
