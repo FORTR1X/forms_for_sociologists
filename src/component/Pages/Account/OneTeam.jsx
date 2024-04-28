@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import UserHeader from "./UserHeader";
 import styles from "./OneTeam.module.scss";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
+import { CgMoreVerticalAlt } from "react-icons/cg";
+import DropDown from "./dropdown/DropDown";
 
 const data = [
   {
@@ -14,19 +16,25 @@ const data = [
 
 const person = [
   {
+    id: "1",
     name: "Вася Иванов",
     img: `..//images/4.jpg`,
     review: `Lorem ipsum`,
+    role: "",
   },
   {
+    id: "2",
     name: "Иванов Вася",
     img: `..//images/5.jpg`,
     review: `Lorem ipsum`,
+    role: "",
   },
   {
+    id: "3",
     name: "Иван Васильев",
     img: `..//images/6.jpg`,
     review: `Lorem ipsum`,
+    role: "",
   },
 ];
 
@@ -66,7 +74,14 @@ const team_survey = [
   },
 ];
 
+const choiceRole = (event) => {
+  event.preventDefault();
+  console.log("выбор роли");
+};
+
 export default function OneTeam() {
+  const [selected, setSelected] = useState(<CgMoreVerticalAlt />);
+
   return (
     <div className={styles.wrapper}>
       <UserHeader />
@@ -86,7 +101,10 @@ export default function OneTeam() {
 
         <div className={styles.team_partisipants}>
           <div className={styles.team_title}>
-            <h2>Участники команды</h2>
+            <h2>
+              Участники команды - добавить троеточие - добавления в команду,
+              удалить участника и назначить роль
+            </h2>
             <NavLink to="/addPart">
               <Button text={"Добавить участника"} />
             </NavLink>
@@ -94,20 +112,30 @@ export default function OneTeam() {
 
           <div className={styles.survey_items}>
             {person.map((p) => (
-              <div className={styles.survey_item}>
+              <div key={p.id} className={styles.survey_item}>
                 <div className={styles.survey_item}>
                   <a href="" className={styles.survey_image}>
                     <img src={p.img} alt="" className="" />
+                    <DropDown
+                      id={p.id}
+                      className={styles.choice_role}
+                      selected={
+                        selected[p.id] ? selected[p.id] : <CgMoreVerticalAlt />
+                      }
+                      fullSelected={selected}
+                      setSelected={setSelected}
+                      // setSelected={useOption}
+                    />
                   </a>
+
                   <a href="" className={styles.survey_name}>
                     {p.name}
+                    {p.id}
                   </a>
-                  <a href="" className={styles.survey_name}>
-                    {p.review}
-                  </a>
-                  <NavLink to="/oneTeam">
+
+                  {/* <NavLink to="/oneTeam">
                     <Button text={"Об участнике"} />
-                  </NavLink>
+                  </NavLink> */}
                 </div>
               </div>
             ))}
@@ -116,7 +144,10 @@ export default function OneTeam() {
 
         <div className={styles.team_team}>
           <div className={styles.team_title}>
-            <h2>Группы участников</h2>
+            <h2>
+              Группы участников - сначала сформировать группу, а потом добавлять
+              туда участников
+            </h2>
             <Button text={"Добавить команду"} />
           </div>
 

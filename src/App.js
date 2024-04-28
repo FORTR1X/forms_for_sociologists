@@ -13,6 +13,7 @@ import NewTeam from "./component/Pages/Account/NewTeam.jsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import AddPartisipiant from "./component/Pages/Account/add/AddPartisipiant.jsx";
 
+
 function App() {
   return (
     <GoogleOAuthProvider clientId="562414104950-urcdjp4vr1j0jn4ditgum8i6678g2r5p.apps.googleusercontent.com">
@@ -31,6 +32,8 @@ function App() {
             <Route path="oneTeam" element={<OneTeam />}></Route>
             <Route path="newTeam" element={<NewTeam />}></Route>
             <Route path="addPart" element={<AddPartisipiant />}></Route>
+            
+            
           </Routes>
         </Router>
       </div>
