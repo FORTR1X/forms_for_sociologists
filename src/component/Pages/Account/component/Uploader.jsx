@@ -33,13 +33,13 @@ function Uploader() {
         ) : (
           <>
             <MdDriveFolderUpload color="#14da8f" size={60} />
-            <p>Выберете файл для обложки команды</p>
+            <p>Выберете файл для аватарки</p>
           </>
         )}
       </div>
       
       <section className={styles.uploaded_row}>
-        <AiFillFileImage color="#1475cf"/>
+        {/* <AiFillFileImage color="#1475cf"/> */}
         <span className={styles.uploaded_content}>
             {fileName}
             <MdDelete onClick={() => {

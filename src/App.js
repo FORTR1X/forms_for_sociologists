@@ -12,6 +12,7 @@ import OneTeam from "./component/Pages/Account/OneTeam.jsx";
 import NewTeam from "./component/Pages/Account/NewTeam.jsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import AddPartisipiant from "./component/Pages/Account/add/AddPartisipiant.jsx";
+import UserSettings from "./component/Pages/Account/UserSettings.jsx";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="oneTeam" element={<OneTeam />}></Route>
             <Route path="newTeam" element={<NewTeam />}></Route>
             <Route path="addPart" element={<AddPartisipiant />}></Route>
+            <Route path="userSettings" element={<UserSettings />}></Route>
             
             
           </Routes>

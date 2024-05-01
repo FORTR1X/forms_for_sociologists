@@ -4,6 +4,7 @@ import styles from "./OneTeam.module.scss";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
 import { CgMoreVerticalAlt } from "react-icons/cg";
+import { FaTrash } from "react-icons/fa";
 import DropDown from "./dropdown/DropDown";
 
 const data = [
@@ -16,21 +17,21 @@ const data = [
 
 const person = [
   {
-    id: "1",
+    id: "0",
     name: "Вася Иванов",
     img: `..//images/4.jpg`,
     review: `Lorem ipsum`,
     role: "",
   },
   {
-    id: "2",
+    id: "1",
     name: "Иванов Вася",
     img: `..//images/5.jpg`,
     review: `Lorem ipsum`,
     role: "",
   },
   {
-    id: "3",
+    id: "2",
     name: "Иван Васильев",
     img: `..//images/6.jpg`,
     review: `Lorem ipsum`,
@@ -74,13 +75,13 @@ const team_survey = [
   },
 ];
 
-const choiceRole = (event) => {
-  event.preventDefault();
-  console.log("выбор роли");
-};
-
 export default function OneTeam() {
   const [selected, setSelected] = useState(<CgMoreVerticalAlt />);
+  const [people, setPeople] = useState(person);
+
+  const handleDeleteItem = (id) => {
+    setPeople(people.filter((obj) => obj.id !== id));
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -111,7 +112,7 @@ export default function OneTeam() {
           </div>
 
           <div className={styles.survey_items}>
-            {person.map((p) => (
+            {people.map((p) => (
               <div key={p.id} className={styles.survey_item}>
                 <div className={styles.survey_item}>
                   <a href="" className={styles.survey_image}>
@@ -124,14 +125,18 @@ export default function OneTeam() {
                       }
                       fullSelected={selected}
                       setSelected={setSelected}
-                      // setSelected={useOption}
                     />
                   </a>
 
-                  <a href="" className={styles.survey_name}>
-                    {p.name}
-                    {p.id}
-                  </a>
+                  <div className={styles.row}>
+                    <a href="" className={styles.survey_name}>
+                      {p.name}
+                    </a>
+
+                    <div className={styles.delete}>
+                      <FaTrash onClick={() => handleDeleteItem(p.id)} />
+                    </div>
+                  </div>
 
                   {/* <NavLink to="/oneTeam">
                     <Button text={"Об участнике"} />

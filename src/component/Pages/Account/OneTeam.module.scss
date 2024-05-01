@@ -52,8 +52,6 @@ h2 {
   margin: 0px auto;
 }
 
-
-
 .team_item {
   display: flex;
 }
@@ -71,7 +69,6 @@ h2 {
   margin-left: 30px;
   gap: 30px;
 }
-
 
 .team_title {
   @extend .dflex;
@@ -116,8 +113,24 @@ h2 {
   margin: 0px 0px 10px 0px;
 }
 
-.choice_role{
+.choice_role {
   position: absolute;
   margin: 5px;
   /* background-color: #dadada; */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.delete {
+  color: #1e1e1e9e;
+}
+
+.delete:hover {
+  color: #1e1e1e;
 }
