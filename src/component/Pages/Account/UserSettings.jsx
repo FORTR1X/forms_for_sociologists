@@ -42,7 +42,7 @@ function UserSettings() {
               type="text"
               name="name"
               id="name"
-              placeholder="Пароль старый"
+              placeholder="Введите старый пароль"
               required
               autofocus
             />
@@ -51,7 +51,16 @@ function UserSettings() {
               type="text"
               name="name"
               id="name"
-              placeholder="Пароль новый"
+              placeholder="Введите новый пароль"
+              required
+              autofocus
+            />
+            <input
+              className={styles.team_name}
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Подтвердите новый пароль"
               required
               autofocus
             />

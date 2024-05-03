@@ -3,6 +3,7 @@ import UserHeader from "./UserHeader";
 import styles from "./AllTeam.module.scss";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
+import { GoArrowUpRight } from "react-icons/go";
 
 const data = [
   {
@@ -54,18 +55,23 @@ export default function AllTeam() {
           {data.map((d) => (
             <div className={styles.survey_item}>
               <div className={styles.survey_item}>
-                <a href="" className={styles.survey_image}>
+                <div href="" className={styles.survey_image}>
                   <img src={d.img} alt="" className="" />
-                </a>
-                <a href="" className={styles.survey_name}>
+                  <NavLink to="/oneTeam">
+                      <GoArrowUpRight
+                        className={`${styles.choice_role} ${styles.bc}`}
+                      />
+                    </NavLink>
+                </div>
+                <div href="" className={styles.survey_name}>
                   {d.name}
-                </a>
-                <a href="" className={styles.survey_name}>
+                </div>
+                <div href="" className={styles.survey_review}>
                   {d.review}
-                </a>
-                <NavLink to="/oneTeam">
+                </div>
+                {/* <NavLink to="/oneTeam">
                   <Button text={"Перейти"} />
-                </NavLink>
+                </NavLink> */}
               </div>
             </div>
           ))}

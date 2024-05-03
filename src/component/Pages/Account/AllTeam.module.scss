@@ -90,3 +90,57 @@ body {
   background-color: #14da8f;
   justify-self: start;
 }
+
+.choice_role {
+  position: absolute;
+  margin: 5px;
+
+  /* background-color: #dadada; */
+}
+
+.bc {
+  background-color: #dadada;
+  border-radius: 0.1em;
+  padding: 2px;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+  margin: 9px;
+}
+
+.bc:hover {
+  background-color: $light_green;
+}
+
+.survey_review {
+  width: 90%;
+  margin: 0 auto;
+  color: #919191;
+}
+
+.team_name_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.survey_title_go {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.survey_go {
+  padding: 2px;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+  margin: 9px;
+  border-radius: 0.1em;
+}
+
+.survey_go:hover {
+  background-color: #c6c6c6;
+}

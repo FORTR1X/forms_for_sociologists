@@ -1,5 +1,5 @@
 .dropdown {
-  margin: -97% 10px;
+  margin: -97% 85%;
   padding: 5px;
   position: relative;
   user-select: none;
@@ -23,6 +23,9 @@
   border-radius: 2px;
 }
 
+.dropdown_content {
+    left: -63px;
+}
 
 .dropdown_content,
 .dropdown_item {

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./UserHeader.module.scss";
 import { NavLink } from "react-router-dom";
+import { FaUserAlt } from "react-icons/fa";
 
 export default function UserHeader() {
   return (
@@ -18,9 +19,11 @@ export default function UserHeader() {
 
         <form action="" method="post" className="form-search"></form>
         <NavLink to="/userSettings">
-          <div className={styles.userPanel}>US</div>
+          <div className={styles.userPanel}><FaUserAlt /></div>
         </NavLink>
       </div>
     </div>
   );
 }
+
+

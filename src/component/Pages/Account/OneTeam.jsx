@@ -4,16 +4,11 @@ import styles from "./OneTeam.module.scss";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
 import { CgMoreVerticalAlt } from "react-icons/cg";
+import { MdGroupAdd } from "react-icons/md";
 import { FaTrash } from "react-icons/fa";
 import DropDown from "./dropdown/DropDown";
-
-const data = [
-  {
-    name: "ПИЗДЕСЬ",
-    img: `..//images/1.jpg`,
-    review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
-  },
-];
+import DropDownTeam from "./dropdown/DropDownTeam";
+import { GoArrowUpRight } from "react-icons/go";
 
 const person = [
   {
@@ -22,6 +17,7 @@ const person = [
     img: `..//images/4.jpg`,
     review: `Lorem ipsum`,
     role: "",
+    email: "student.@mail.ru",
   },
   {
     id: "1",
@@ -29,6 +25,7 @@ const person = [
     img: `..//images/5.jpg`,
     review: `Lorem ipsum`,
     role: "",
+    email: "student.@mail.ru",
   },
   {
     id: "2",
@@ -36,22 +33,32 @@ const person = [
     img: `..//images/6.jpg`,
     review: `Lorem ipsum`,
     role: "",
+    email: "student.@mail.ru",
   },
 ];
 
 const team = [
   {
+    id: "0",
     name: "Пишки",
     img: `..//images/1.jpg`,
-    review: `Lorem ipsum`,
+    review: `Геоштуки, карты, хорошие ребятки`,
   },
   {
+    id: "1",
     name: "Исы",
     img: `..//images/2.jpg`,
+    review: `Нормально в целом`,
+  },
+  {
+    id: "2",
+    name: "Пины",
+    img: `..//images/3.jpg`,
     review: `Lorem ipsum`,
   },
   {
-    name: "Пины",
+    id: "3",
+    name: "Ивт",
     img: `..//images/3.jpg`,
     review: `Lorem ipsum`,
   },
@@ -60,16 +67,19 @@ const team = [
 const team_survey = [
   {
     img: `..//images/7.jpg`,
+    name: "Опрос 1",
     review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
       каков ваш психологический возраст`,
   },
   {
     img: `..//images/8.jpg`,
+    name: "Опрос 2",
     review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
       каков ваш психологический возраст`,
   },
   {
     img: `..//images/9.jpg`,
+    name: "Опрос 3",
     review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
       каков ваш психологический возраст`,
   },
@@ -77,10 +87,16 @@ const team_survey = [
 
 export default function OneTeam() {
   const [selected, setSelected] = useState(<CgMoreVerticalAlt />);
+  const [selectedTeam, setSelectedTeam] = useState(<MdGroupAdd />);
   const [people, setPeople] = useState(person);
+  const [teams, setTeams] = useState(team);
 
   const handleDeleteItem = (id) => {
     setPeople(people.filter((obj) => obj.id !== id));
+  };
+
+  const handleDeleteTeam = (id) => {
+    setTeams(teams.filter((obj) => obj.id !== id));
   };
 
   return (
@@ -88,24 +104,26 @@ export default function OneTeam() {
       <UserHeader />
 
       <div className={styles.team_description}>
-        {data.map((d) => (
-          <div className={styles.team_item}>
-            <a href="" className={styles.team_image}>
-              <img src={d.img} alt="" className="" />
-            </a>
-            <div className={styles.team_text}>
-              {d.name} <Button text={"Редактировать"} />
-              {d.review} <Button text={"Редактировать"} />
+        <div className={styles.team_item}>
+          <a href="" className={styles.team_image}>
+            <img src="./../../../..//images/2.jpg" alt="" className="" />
+            <div className={styles.edit_img}>
+              <Button text={"Выберите файл"} />
+              <p>
+                <FaTrash />
+              </p>
             </div>
+          </a>
+          <div className={styles.team_text}>
+            <input placeholder="Название команды" type="text" name="" id="" />
+            <input placeholder="Описание команды" type="text" name="" id="" />
+            <Button text={"Сохранить"} />
           </div>
-        ))}
+        </div>
 
         <div className={styles.team_partisipants}>
           <div className={styles.team_title}>
-            <h2>
-              Участники команды - добавить троеточие - добавления в команду,
-              удалить участника и назначить роль
-            </h2>
+            <h2>Участники команды</h2>
             <NavLink to="/addPart">
               <Button text={"Добавить участника"} />
             </NavLink>
@@ -115,7 +133,7 @@ export default function OneTeam() {
             {people.map((p) => (
               <div key={p.id} className={styles.survey_item}>
                 <div className={styles.survey_item}>
-                  <a href="" className={styles.survey_image}>
+                  <div href="" className={styles.survey_image}>
                     <img src={p.img} alt="" className="" />
                     <DropDown
                       id={p.id}
@@ -126,21 +144,31 @@ export default function OneTeam() {
                       fullSelected={selected}
                       setSelected={setSelected}
                     />
-                  </a>
+
+                    <DropDownTeam
+                      id={p.id}
+                      className={styles.choice_team}
+                      selected={
+                        selectedTeam[p.id] ? selectedTeam[p.id] : <MdGroupAdd />
+                      }
+                      fullSelected={selectedTeam}
+                      setSelected={setSelectedTeam}
+                    />
+                  </div>
 
                   <div className={styles.row}>
-                    <a href="" className={styles.survey_name}>
+                    <div href="" className={styles.survey_name}>
                       {p.name}
-                    </a>
+                    </div>
 
                     <div className={styles.delete}>
                       <FaTrash onClick={() => handleDeleteItem(p.id)} />
                     </div>
                   </div>
 
-                  {/* <NavLink to="/oneTeam">
-                    <Button text={"Об участнике"} />
-                  </NavLink> */}
+                  <div href="" className={styles.survey_email}>
+                    {p.email}
+                  </div>
                 </div>
               </div>
             ))}
@@ -149,29 +177,34 @@ export default function OneTeam() {
 
         <div className={styles.team_team}>
           <div className={styles.team_title}>
-            <h2>
-              Группы участников - сначала сформировать группу, а потом добавлять
-              туда участников
-            </h2>
-            <Button text={"Добавить команду"} />
+            <h2>Группы участников</h2>
+            <Button text={"Создать группу"} />
           </div>
 
           <div className={styles.survey_items}>
-            {team.map((t) => (
-              <div className={styles.survey_item}>
+            {teams.map((t) => (
+              <div key={t.id} className={styles.survey_item}>
                 <div className={styles.survey_item}>
-                  <a href="" className={styles.survey_image}>
+                  <div href="" className={styles.survey_image}>
                     <img src={t.img} alt="" className="" />
-                  </a>
-                  <a href="" className={styles.survey_name}>
-                    {t.name}
-                  </a>
-                  <a href="" className={styles.survey_name}>
+                    <NavLink to="/oneGroup">
+                      <GoArrowUpRight
+                        className={`${styles.choice_role} ${styles.bc}`}
+                      />
+                    </NavLink>
+                  </div>
+                  <div className={styles.team_name_title}>
+                    <div href="" className={styles.survey_name}>
+                      {t.name}
+                    </div>
+                    <div className={styles.delete}>
+                      <FaTrash onClick={() => handleDeleteTeam(t.id)} />
+                    </div>
+                  </div>
+
+                  <div href="" className={styles.survey_review}>
                     {t.review}
-                  </a>
-                  <NavLink to="/oneTeam">
-                    <Button text={"О команде"} />
-                  </NavLink>
+                  </div>
                 </div>
               </div>
             ))}
@@ -180,7 +213,7 @@ export default function OneTeam() {
 
         <div className={styles.team_survey}>
           <div className={styles.team_title}>
-            <h1>Опросы команды</h1>
+            <h2>Опросы команды</h2>
             <Button text={"Создать опрос"} />
           </div>
 
@@ -188,18 +221,22 @@ export default function OneTeam() {
             {team_survey.map((ts) => (
               <div className={styles.survey_item}>
                 <div className={styles.survey_item}>
-                  <a href="" className={styles.survey_image}>
+                  <div href="" className={styles.survey_image}>
                     <img src={ts.img} alt="" className="" />
-                  </a>
-                  <a href="" className={styles.survey_name}>
-                    {ts.name}
-                  </a>
-                  <a href="" className={styles.survey_name}>
+                  </div>
+
+                  <div className={styles.survey_title_go}>
+                    <div href="" className={styles.survey_name}>
+                      {ts.name}
+                    </div>
+                    <NavLink to="/survey">
+                      <GoArrowUpRight className={styles.survey_go} />
+                    </NavLink>
+                  </div>
+
+                  <div href="" className={styles.survey_review}>
                     {ts.review}
-                  </a>
-                  <NavLink to="/oneTeam">
-                    <Button text={"Перейти"} />
-                  </NavLink>
+                  </div>
                 </div>
               </div>
             ))}
