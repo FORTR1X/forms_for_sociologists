@@ -173,12 +173,14 @@ export default function OneTeam() {
               </div>
             ))}
           </div>
-        </div>
+        </div> 
 
         <div className={styles.team_team}>
           <div className={styles.team_title}>
             <h2>Группы участников</h2>
-            <Button text={"Создать группу"} />
+            <NavLink to="/newGroup">
+              <Button text={"Создать группу"} />
+            </NavLink>
           </div>
 
           <div className={styles.survey_items}>
