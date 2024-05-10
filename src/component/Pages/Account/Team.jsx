@@ -57,7 +57,7 @@ export default function Team() {
           <Button text={"Перейти"} />
         </NavLink>
       </div>
-
+ 
       <div className={styles.team}>
         <Slider {...settings}>
           {data.map((d) => (
@@ -70,7 +70,7 @@ export default function Team() {
                   <p>{d.name}</p>
                   <p>{d.review}</p>
 
-                  <button className={styles.user_button}>Перейти</button>
+                  {/* <button className={styles.user_button}>Перейти</button> */}
                 </div>
               </motion.div>
             </NavLink>

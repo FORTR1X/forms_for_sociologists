@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$light_green: #effffa;
+$dark_green: #14da8f;
+$light_grey: #dadada;
+$dark_grey: #3e3e3e;
+$black: #000000;
+$white: #fff;
+
+a {
+  text-decoration: none;
+  /* color: #000000; */
+}
+
+.dflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+body {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+input,
+textarea,
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.partisipiant {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.table {
+  width: 100%;
+  margin: 0 auto;
+}
+.survey_item {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.delete {
+  color: #1e1e1e9e;
+}
+
+.delete:hover {
+  color: rgb(204, 22, 22);
+}

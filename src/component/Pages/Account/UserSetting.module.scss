@@ -13,7 +13,7 @@ $white: #fff;
 
 a {
   text-decoration: none;
-  color: #000000;
+  /* color: #000000; */
 }
 
 .dflex {
@@ -43,21 +43,50 @@ button {
   margin: 0px auto;
 }
 
-.form {
+.wrapper_wrapper {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
-  // align-items: start;
+}
+
+.right {
+  /* width: 50%; */
+  margin-left: 120px;
+}
+.left {
   width: 50%;
-  background-color: #f4fff5;
+  /* margin: 0 auto; */
+  margin-left: 30px;
+}
+.form {
+  /* display: flex; */
+  // align-items: start;
+  /* width: 50%; */
+  border: 1px solid #a8a5a5;
   padding: 30px;
   border-radius: 5px;
   margin: 0 auto;
 }
+.delete {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border: 1px solid #d55151;
+}
 
+.question {
+  margin: 0 auto;
+}
+
+.shure {
+  text-align: center;
+  color: #a8a5a5;
+}
 .right_input {
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
-  align-items: start;
+  margin: 0 auto;
 }
 
 .text_input {
@@ -83,3 +112,4 @@ button {
   padding: 10px;
   margin-bottom: 20px;
 }
+

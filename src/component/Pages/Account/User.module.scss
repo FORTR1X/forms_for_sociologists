@@ -12,7 +12,7 @@ $light_grey: #dadada;
 
 a {
   text-decoration: none;
-  color: #000000;
+  color: #4d4d4d;
 }
 
 button {
@@ -36,11 +36,10 @@ body {
 h2 {
   font-size: 1.8vw;
   font-weight: 600;
-  color: $black;
   margin-top: 20px;
   line-height: 1.5;
   overflow: hidden;
-  letter-spacing: 5px;
+  text-transform: uppercase;
 }
 
 .wrapper {
@@ -61,7 +60,10 @@ h2 {
 }
 
 .team_card {
+  margin: 10px;
+  padding: 10px;
   border: 1px solid #f0f0f0;
+  background-color: #fbf9f9;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
   position: relative;
@@ -155,7 +157,7 @@ h2 {
   font-weight: 400;
   border-radius: 0.5em;
   background-color: $white;
-  color: $black;
+  color: #4d4d4d;
   outline: 2px solid $dark_green;
   text-align: center;
 }

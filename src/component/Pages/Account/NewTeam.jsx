@@ -16,7 +16,9 @@ export default function NewTeam() {
         method="POST"
         className={styles.form}
       >
-        <Uploader />
+        <div className={styles.left}>
+          <Uploader />
+        </div>
 
         <div className={styles.right_input}>
           <div className={styles.text_input}>
@@ -45,8 +47,11 @@ export default function NewTeam() {
         </div>
       </form>
 
-      <h2>Добавление участника - отправленные заявки</h2>
+      <h2 className={styles.title}>Добавление участника</h2>
       <AddForm />
+      <h2 className={`${styles.title} ${styles.title_gray}`}>
+        Отправленные приглашения
+      </h2>
     </div>
   );
 }

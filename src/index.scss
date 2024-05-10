@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Borel&family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Borel&family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap"); */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 $light_green: #effffa;
 $dark_green: #14da8f;
@@ -11,8 +13,13 @@ $white: #fff;
   box-sizing: border-box;
 }
 
+a{
+  color: #4d4d4d;
+}
+
 body {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Rubik", sans-serif;
   color: #4d4d4d;
 }
 

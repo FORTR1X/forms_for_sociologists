@@ -5,9 +5,8 @@ $dark_grey: #3e3e3e;
 $black: #000000;
 $white: #fff;
 
-
-.uploader{
-color: #14da8f;
+.uploader {
+  /* color: #14da8f; */
 }
 
 .file_wrapper {
@@ -30,14 +29,13 @@ color: #14da8f;
   align-items: center;
   padding: 15px 20px;
   border-radius: 5px;
-  background-color: $light_grey;
+  /* background-color: wheat; */
   margin-bottom: 20px;
 }
 
-.uploaded_content{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.uploaded_content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-

@@ -28,14 +28,19 @@ export default function SignInSignUp() {
         `}
       >
         <div className={styles.SigninSignup}>
-          <form action="#" className={styles.SignInForm}>
+          <form
+            action="https://hard-dodo-96.telebit.io/login"
+            method="post"
+            className={styles.SignInForm}
+          >
             <h2 className={styles.title}>Войти</h2>
             <div className={styles.inputField}>
               <i className={styles.FaUser}></i>
               <input
                 className={styles.inputS}
-                type="text" 
-                placeholder="Ваше имя"
+                type="text"
+                placeholder="Ваша почта"
+                name="user[email]"
               />
             </div>
             <div className={styles.inputField}>
@@ -44,6 +49,7 @@ export default function SignInSignUp() {
                 className={styles.inputS}
                 type="password"
                 placeholder="Ваш пароль"
+                name="user[password]"
               />
             </div>
             <input type="submit" value="Войти" className={styles.btn} />
@@ -76,7 +82,11 @@ export default function SignInSignUp() {
             </p>
           </form>
 
-          <form action="#" className={styles.SignUpForm}>
+          <form
+            action="https://hard-dodo-96.telebit.io/signup"
+            method="post"
+            className={styles.SignUpForm}
+          >
             <h2 className={styles.title}>Регистрация</h2>
             <div className={styles.inputField}>
               <i className={styles.FaUser}></i>
@@ -84,6 +94,7 @@ export default function SignInSignUp() {
                 className={styles.inputS}
                 type="text"
                 placeholder="Ваше имя"
+                name="user[name]"
               />
             </div>
             <div className={styles.inputField}>
@@ -92,6 +103,7 @@ export default function SignInSignUp() {
                 className={styles.inputS}
                 type="text"
                 placeholder="Ваша почта"
+                name="user[email]"
               />
             </div>
             <div className={styles.inputField}>
@@ -100,6 +112,7 @@ export default function SignInSignUp() {
                 className={styles.inputS}
                 type="password"
                 placeholder="Ваш пароль"
+                name="user[password]"
               />
             </div>
             <input type="submit" value="Регистрация" className={styles.btn} />
