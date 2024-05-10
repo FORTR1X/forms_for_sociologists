@@ -46,12 +46,27 @@ button {
 .table {
   width: 100%;
   margin: 0 auto;
+  table-layout: fixed;
+}
+
+td {
+  height: 30px;
 }
 .survey_item {
   width: 100%;
   margin: 0 auto;
 }
 
+.survey_role {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  position: relative;
+}
+
+.choice_role {
+  position: absolute;
+}
 
 .delete {
   color: #1e1e1e9e;

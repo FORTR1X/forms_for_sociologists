@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./DropDown.module.scss";
+import styles from "./DropDownGroup.module.scss";
 import { useState } from "react";
 
 function DropDown({ selected, setSelected, id, fullSelected }) {

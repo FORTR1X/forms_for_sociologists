@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import UserHeader from "../UserHeader";
+import DropDownGroup from "../dropdown/DropDowmGroup";
 import styles from "./OneGroup.module.scss";
 import { FaTrash } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
 
 const person = [
   {
@@ -32,9 +34,12 @@ const person = [
 
 export default function OneGroup() {
   const [people, setPeople] = useState(person);
+  const [selected, setSelected] = useState(<IoIosArrowDown />);
+
   const handleDeleteItem = (id) => {
     setPeople(people.filter((obj) => obj.id !== id));
   };
+
   return (
     <div>
       <UserHeader />
@@ -52,7 +57,17 @@ export default function OneGroup() {
                 {p.email}
               </td>
               <td href="" className={styles.survey_role}>
-                {p.role}
+                {/* {p.role} */}
+
+                <DropDownGroup
+                  id={p.id}
+                  className={styles.choice_role}
+                  selected={
+                    selected[p.id] ? selected[p.id] : <IoIosArrowDown />
+                  }
+                  fullSelected={selected}
+                  setSelected={setSelected}
+                />
               </td>
               <td className={styles.delete}>
                 <FaTrash onClick={() => handleDeleteItem(p.id)} />
