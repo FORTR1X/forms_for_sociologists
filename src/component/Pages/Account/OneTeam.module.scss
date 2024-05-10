@@ -60,6 +60,37 @@ h2 {
 .team_image {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.edit_foto {
+  position: absolute;
+  left: 85%;
+  background-color: #dadada;
+  border-radius: 0.1em;
+  padding: 2px;
+  transition: all 0.3s ease-in-out;
+  font-size: 25px;
+  margin: 9px;
+}
+
+.edit_foto:hover {
+  background-color: #b8b8b8;
+}
+
+.delete_foto {
+  position: absolute;
+  top: 90%;
+  left: 85%;
+  background-color: #dadada;
+  border-radius: 0.1em;
+  padding: 2px;
+  transition: all 0.3s ease-in-out;
+  font-size: 25px;
+  margin: 9px;
+}
+
+.delete_foto:hover {
+  fill: rgb(129, 44, 44);
 }
 .edit_img {
   display: flex;
@@ -77,9 +108,27 @@ h2 {
 
 .team_text {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   margin-left: 30px;
-  gap: 30px;
+  gap: 150px;
+}
+
+.edit_info {
+  background-color: #dadada;
+  border-radius: 0.1em;
+  padding: 2px;
+  transition: all 0.3s ease-in-out;
+  font-size: 25px;
+}
+
+.edit_info:hover {
+  background-color: #e9e7e7;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .team_title {
@@ -152,7 +201,7 @@ h2 {
   // margin-left: 90px;
   // background-color: red;
 }
- 
+
 .row {
   display: flex;
   align-items: center;

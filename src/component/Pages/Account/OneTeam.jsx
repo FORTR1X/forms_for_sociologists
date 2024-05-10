@@ -6,9 +6,20 @@ import { NavLink } from "react-router-dom";
 import { CgMoreVerticalAlt } from "react-icons/cg";
 import { MdGroupAdd } from "react-icons/md";
 import { FaTrash } from "react-icons/fa";
+import { CiEdit } from "react-icons/ci";
 import DropDown from "./dropdown/DropDown";
 import DropDownTeam from "./dropdown/DropDownTeam";
 import { GoArrowUpRight } from "react-icons/go";
+import { EditPostForm } from "./edit/EditPostForm";
+
+const info = [
+  {
+    id: "0",
+    name: "Команда Шашлыки",
+    img: `..//images/4.jpg`,
+    review: `Кто какое мясо ест`,
+  },
+];
 
 const person = [
   {
@@ -90,6 +101,7 @@ export default function OneTeam() {
   const [selectedTeam, setSelectedTeam] = useState(<MdGroupAdd />);
   const [people, setPeople] = useState(person);
   const [teams, setTeams] = useState(team);
+  const [show, showEditForm] = useState(false);
 
   const handleDeleteItem = (id) => {
     setPeople(people.filter((obj) => obj.id !== id));
@@ -99,25 +111,37 @@ export default function OneTeam() {
     setTeams(teams.filter((obj) => obj.id !== id));
   };
 
+  const handleEditFormShow = () => {
+    showEditForm(true);
+  };
+  const handleEditFormHide = () => {
+    showEditForm(false);
+  };
+
   return (
     <div className={styles.wrapper}>
       <UserHeader />
 
       <div className={styles.team_description}>
+        {show && <EditPostForm handleEditFormHide={handleEditFormHide} />}
         <div className={styles.team_item}>
           <a href="" className={styles.team_image}>
             <img src="./../../../..//images/2.jpg" alt="" className="" />
-            <div className={styles.edit_img}>
-              <Button text={"Выберите файл"} />
-              <p>
-                <FaTrash />
-              </p>
-            </div>
+            <CiEdit className={styles.edit_foto} />
+            <FaTrash className={styles.delete_foto} />
           </a>
           <div className={styles.team_text}>
-            <input placeholder="Название команды" type="text" name="" id="" />
-            <input placeholder="Описание команды" type="text" name="" id="" />
-            <Button text={"Сохранить"} />
+            <div className={styles.info}>
+              {info.map((p) => (
+                <>
+                  <h3>{p.name}</h3>
+                  <div>{p.review}</div>
+                </>
+              ))}
+            </div>
+
+            <CiEdit className={styles.edit_info} onClick={handleEditFormShow} />
+            {/* <Button text={"Сохранить"} /> */}
           </div>
         </div>
 
@@ -173,7 +197,7 @@ export default function OneTeam() {
               </div>
             ))}
           </div>
-        </div> 
+        </div>
 
         <div className={styles.team_team}>
           <div className={styles.team_title}>

@@ -69,9 +69,13 @@ body {
   .userPanel {
     width: 50px;
     height: 50px;
+    /* font-size: 27px; */
     border-radius: 50%;
-    line-height: 50px;
-    text-align: center;
+    /* line-height: 50px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* text-align: center; */
     background: $dark_green;
     color: rgb(255, 255, 255);
   }
