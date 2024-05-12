@@ -1,7 +1,7 @@
-import "./EditPostForm.scss";
+import styles from "./EditPostForm.module.scss";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { useEffect, useState } from "react";
-import Button from "../Button";
+import Button from "../Button"; 
 
 export const EditPostForm = (props) => {
 
@@ -33,10 +33,10 @@ export const EditPostForm = (props) => {
   const handleEditFormHide = props.handleEditFormHide;
   return (
     <>
-      <form className="editPostForm"
+      <form className={styles.editPostForm}
     //    onSubmit={savePost}
        >
-        <button className="hideBtn" 
+        <button className={styles.hideBtn}
         onClick={handleEditFormHide}
         >
           <CancelIcon />
@@ -44,7 +44,7 @@ export const EditPostForm = (props) => {
         <h2>Редактирование команды</h2>
         <div>
           <input
-            className="editFormInput"
+            className={styles.editFormInput}
             type="text"
             name="postTitle"
             placeholder="Заголовок поста"
@@ -55,7 +55,7 @@ export const EditPostForm = (props) => {
         </div>
         <div>
           <textarea
-            className="editFormInput"
+            className={styles.editFormInput}
             name="postDescription"
             placeholder="Описание поста"
             // value={postDesc}
@@ -66,14 +66,14 @@ export const EditPostForm = (props) => {
         </div>
         <div>
           <button
-            className="blackBtn"
+            className={styles.blackBtn}
             type="submit"
           >
             <Button text={'Сохранить'}/>
           </button>
         </div>
       </form>
-      <div onClick={handleEditFormHide} className="overlay"></div>
+      <div onClick={handleEditFormHide} className={styles.overlay}></div>
     </>
   );
 }
