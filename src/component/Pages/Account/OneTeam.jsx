@@ -11,6 +11,7 @@ import DropDown from "./dropdown/DropDown";
 import DropDownTeam from "./dropdown/DropDownTeam";
 import { GoArrowUpRight } from "react-icons/go";
 import { EditPostForm } from "./edit/EditPostForm";
+import { EditUserImage } from "./edit/EditUserImage";
 
 const info = [
   {
@@ -102,6 +103,7 @@ export default function OneTeam() {
   const [people, setPeople] = useState(person);
   const [teams, setTeams] = useState(team);
   const [show, showEditForm] = useState(false);
+  const [showImg, showEditImg] = useState(false);
 
   const handleDeleteItem = (id) => {
     setPeople(people.filter((obj) => obj.id !== id));
@@ -117,19 +119,26 @@ export default function OneTeam() {
   const handleEditFormHide = () => {
     showEditForm(false);
   };
+  const handleEditImgShow = () => {
+    showEditImg(true);
+  };
+  const handleEditImgHide = () => {
+    showEditImg(false);
+  };
 
   return (
     <div className={styles.wrapper}>
-      <UserHeader />
+      <UserHeader /> 
 
       <div className={styles.team_description}>
         {show && <EditPostForm handleEditFormHide={handleEditFormHide} />}
+        {showImg && <EditUserImage handleEditImgHide={handleEditImgHide} />}
         <div className={styles.team_item}>
-          <a href="" className={styles.team_image}>
+          <div href="" className={styles.team_image}>
             <img src="./../../../..//images/2.jpg" alt="" className="" />
-            <CiEdit className={styles.edit_foto} />
-            <FaTrash className={styles.delete_foto} />
-          </a>
+            <CiEdit className={styles.edit_foto}  onClick={handleEditImgShow}/>
+            {/* <FaTrash className={styles.delete_foto} /> */}
+          </div>
           <div className={styles.team_text}>
             <div className={styles.info}>
               {info.map((p) => (
