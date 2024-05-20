@@ -4,7 +4,7 @@ import styles from "./AddPartisipiant.module.scss";
 export default function AddForm() {
   return (
     <div className={styles.form_wrapper}>
-      <form action="">
+      <form action=""> 
         <input
           type="email"
           placeholder="Введите email участника, которго вы хотите добавить в команду"
