@@ -13,7 +13,7 @@ export const InitForm = () => {
         changeSurveyDeadline(e.target.value)
     }
 
-    return (
+    return ( 
         <form onSubmit={(e) => {
             e.preventDefault();
             navigate("/surveys/content/1");

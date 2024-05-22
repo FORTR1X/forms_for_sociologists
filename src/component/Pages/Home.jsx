@@ -293,8 +293,8 @@ export default function Home() {
 
             <NavLink
               style={{ color: "inherit", textDecoration: "inherit" }}
-              to="/survey"
-            >
+              to="/surveyHome"
+            > 
               <motion.div
                 className={`${styles.btn} ${styles.btn_secondary}`}
                 variants={btnGroup}

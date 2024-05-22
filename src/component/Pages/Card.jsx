@@ -124,66 +124,10 @@ export default function Card() {
       >
         {data.map((d) => (
           <motion.div className={styles.card} variants={item}>
-                {/* <motion.span className={styles.service_icon} style={{ backgroundColor: "ddfbf9" }} variants={hoverEffect} whileHover="whileHover" whileTap="whileTap">
-              <IconContext.Provider
-                value={{
-                  color: "#14da8f",
-                  size: "22px",
-                }}
-              >
-                <IoMailOutline />
-              </IconContext.Provider>
-            </motion.span> */}
-              <h3>{d.title}</h3>
-              <h4>{d.description}</h4>
-                {/* <a href="#">
-              <span>Learn more</span>
-              <IconContext.Provider
-                value={{
-                  color: "#14da8f",
-                  size: "18px",
-                }}
-              >
-                <IoChevronForward />
-              </IconContext.Provider>
-            </a> */}
+            <h3>{d.title}</h3>
+            <h4>{d.description}</h4>
           </motion.div>
         ))}
-        
-        {/* <div className={`${styles.card} ${styles.dark}`}>
-          <img
-            src={process.env.PUBLIC_URL + "/images/line.png"}
-            alt="line"
-            className={styles.line}
-          />
-          <h2>
-            +4 <br /> больше...
-          </h2>
-          <a href="#">
-            <span>View more...</span>
-            <span
-              className={styles.service_icon}
-              style={{ backgroundColor: "ddfbf9" }}
-            >
-              <IconContext.Provider
-                value={{
-                  color: "#fff",
-                  size: "18px",
-                }}
-              >
-                <IoMailOutline />
-              </IconContext.Provider>
-            </span>
-            <IconContext.Provider
-              value={{
-                color: "#fff",
-                size: "18px",
-              }}
-            >
-              <IoChevronForward />
-            </IconContext.Provider>
-          </a>
-        </div> */}
       </motion.div>
     </motion.div>
   );

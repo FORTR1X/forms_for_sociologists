@@ -34,7 +34,7 @@ export const Container = ({children, id, name, required, question, requiredIsNot
                 <input onChange={handleChangeFormName} type="text" placeholder="Текст вопроса" value={question} />
             </div>
             {children}
-            <button className="p-2 text-white bg-green-500 rounded-lg" onClick={handleRemoveForm}>Delete</button>
+            <button className="p-2 text-white bg-green-500 rounded-lg" onClick={handleRemoveForm}>Удалить</button>
         </div>
     )
 }
