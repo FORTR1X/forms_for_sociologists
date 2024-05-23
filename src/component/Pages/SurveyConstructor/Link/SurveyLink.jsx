@@ -50,12 +50,15 @@ export default function SurveyLink() {
                     {d.review}
                   </div>
                 </div>
+                <div className="out"></div>
               </div>
             ))}
           </div>
+
           <Button text={"Скопировать ссылку на опрос"} />
         </div>
       </div>
+      <script src="script.js"></script>
     </div>
   );
 }
