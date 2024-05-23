@@ -6,7 +6,7 @@ import UserHeader from "./UserHeader";
 import Team from "./Team";
 import UserSurvey from "./UserSurvey";
 import UserInfo from "./UserInfo";
-
+ 
 export default function User() {
   return (
     <div className={styles.wrapper}>

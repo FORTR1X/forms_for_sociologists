@@ -18,14 +18,14 @@ const info = [
     id: "0",
     name: "Команда Шашлыки",
     img: `..//images/4.jpg`,
-    review: `Кто какое мясо ест`,
+    review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis`,
   },
 ];
 
 const person = [
   {
     id: "0",
-    name: "Вася Иванов",
+    name: "Василиса Иванова",
     img: `..//images/4.jpg`,
     review: `Lorem ipsum`,
     role: "",
@@ -33,7 +33,7 @@ const person = [
   },
   {
     id: "1",
-    name: "Иванов Вася",
+    name: "Татьяна Васильева",
     img: `..//images/5.jpg`,
     review: `Lorem ipsum`,
     role: "",
@@ -41,7 +41,7 @@ const person = [
   },
   {
     id: "2",
-    name: "Иван Васильев",
+    name: "Лариса Гузеева",
     img: `..//images/6.jpg`,
     review: `Lorem ipsum`,
     role: "",
@@ -54,13 +54,13 @@ const team = [
     id: "0",
     name: "Пишки",
     img: `..//images/1.jpg`,
-    review: `Геоштуки, карты, хорошие ребятки`,
+    review: `Геоинформационные системы`,
   },
   {
     id: "1",
     name: "Исы",
     img: `..//images/2.jpg`,
-    review: `Нормально в целом`,
+    review: `Lorem ipsum`,
   },
   {
     id: "2",
@@ -79,21 +79,18 @@ const team = [
 const team_survey = [
   {
     img: `..//images/7.jpg`,
-    name: "Опрос 1",
-    review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
-      каков ваш психологический возраст`,
+    name: "Как привить правильные привычки",
+    review: `Насколько тяжело вставать по утрам и вести активный образ жизни`,
   },
   {
     img: `..//images/8.jpg`,
     name: "Опрос 2",
-    review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
-      каков ваш психологический возраст`,
+    review: `Как начать регулярно заниматься спортом`,
   },
   {
     img: `..//images/9.jpg`,
-    name: "Опрос 3",
-    review: `Опрос почему вы поступили на магистратуру, а не пошли работать и
-      каков ваш психологический возраст`,
+    name: "Как пить больше воды",
+    review: `Сколько пить воды и почему это так важно`,
   },
 ];
 
@@ -128,7 +125,7 @@ export default function OneTeam() {
 
   return (
     <div className={styles.wrapper}>
-      <UserHeader /> 
+      <UserHeader />
 
       <div className={styles.team_description}>
         {show && <EditPostForm handleEditFormHide={handleEditFormHide} />}
@@ -136,7 +133,7 @@ export default function OneTeam() {
         <div className={styles.team_item}>
           <div href="" className={styles.team_image}>
             <img src="./../../../..//images/2.jpg" alt="" className="" />
-            <CiEdit className={styles.edit_foto}  onClick={handleEditImgShow}/>
+            <CiEdit className={styles.edit_foto} onClick={handleEditImgShow} />
             {/* <FaTrash className={styles.delete_foto} /> */}
           </div>
           <div className={styles.team_text}>

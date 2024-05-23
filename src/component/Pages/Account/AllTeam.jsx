@@ -7,17 +7,17 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const data = [
   {
-    name: "ПИЗДЕСЬ",
+    name: "Поход Инжир",
     img: `..//images/1.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
   },
   {
-    name: "ПИЗДЕСЬ",
+    name: "Группа Пи/б-20-1-о",
     img: `..//images/3.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
   },
   {
-    name: "ПИЗДЕСЬ",
+    name: "Шашлыки",
     img: `..//images/2.jpg`,
     review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus perferendis officiis, expedita maxime vero molestias, voluptatibus ad nobis deserunt sunt, est enim recusandae vitae quam cum dignissimos numquam rem?`,
   },
