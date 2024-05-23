@@ -7,5 +7,7 @@ export const useSurveyStore = create((set) => ({
   changeSurveyDeadline: (newDeadLine) => set({surveyDeadline: newDeadLine}),
   changeSurveyMinTime: (newMinTime) => set({surveyMinTime: newMinTime}),
   changeSurveyAttemptCount: (newAttempt) => set({surveyAttemptCount: newAttempt}),
+  changeSurveyAnonymous: (newAnonymous) => set({surveyAnonymous: newAnonymous}),
+  changeSurveyCountAnswers: (newCountAnswers) => set({surveyCountAnswers: newCountAnswers}),
 }))
 

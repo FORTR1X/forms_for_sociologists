@@ -17,9 +17,21 @@ export const InitForm = () => {
     (state) => state.changeSurveyMinTime
   );
 
-  const surveyAttemptCount = useSurveyStore((state) => state.surveyAttemptCount);
+  const surveyAttemptCount = useSurveyStore(
+    (state) => state.surveyAttemptCount
+  );
   const changeSurveyAttemptCount = useSurveyStore(
     (state) => state.changeSurveyAttemptCount
+  );
+
+  const surveyAnonymous = useSurveyStore((state) => state.surveyAnonymous);
+  const changeSurveyAnonymous = useSurveyStore(
+    (state) => state.changeSurveyAnonymous
+  );
+
+  const surveyCountAnswers = useSurveyStore((state) => state.surveyCountAnswers);
+  const changeSurveyCountAnswers = useSurveyStore(
+    (state) => state.changeSurveyCountAnswers
   );
 
   const navigate = useNavigate();
@@ -32,6 +44,12 @@ export const InitForm = () => {
   };
   const changeSurveyAttemptCountForm = (e) => {
     changeSurveyAttemptCount(e.target.value);
+  };
+  const changeSurveyAnonymousForm = (e) => {
+    changeSurveyAnonymous(e.target.value);
+  };
+  const changeSurveyCountAnswersForm = (e) => {
+    changeSurveyCountAnswers(e.target.value);
   };
 
   return (
@@ -186,7 +204,9 @@ export const InitForm = () => {
               name="surveyAttemptCount"
               value="unlimited"
             />
-            <label className="pl-2">Не ограниченое количество прохождений</label>
+            <label className="pl-2">
+              Не ограниченое количество прохождений
+            </label>
           </div>
           <div className="pl-4">
             <input
@@ -212,25 +232,61 @@ export const InitForm = () => {
         <div className="flex py-2">
           <div>
             <input
-              onChange={changeSurveyAttemptCountForm}
+              onChange={changeSurveyAnonymousForm}
               className="cursor-pointer"
-              checked={surveyAttemptCount === "unlimited"}
+              checked={surveyAnonymous === "anonymous"}
               type="radio"
-              name="surveyAttemptCount"
-              value="unlimited"
+              name="surveyAnonymous"
+              value="anonymous"
             />
-            <label className="pl-2">Не ограниченое количество прохождений</label>
+            <label className="pl-2">Анонимный опрос</label>
           </div>
           <div className="pl-4">
             <input
-              onChange={changeSurveyAttemptCountForm}
+              onChange={changeSurveyAnonymousForm}
               className="cursor-pointer"
-              checked={surveyAttemptCount === "one"}
+              checked={surveyAnonymous === "open"}
               type="radio"
-              name="surveyAttemptCount"
-              value="one"
+              name="surveyAnonymous"
+              value="open"
             />
-            <label className="pl-2">Единоразовое прохождение</label>
+            <label className="pl-2">Открытый опрос</label>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-4">
+        <h3 className="py-2 text-xl">
+          Закрытие опроса по достижению указанного количества ответов
+        </h3>
+        <p className="py-2 text-gray-400">
+          Указав необходимое количество ответов, опрос станет недоступным, когда
+          будет собрано заданное количество голосов
+          <br />
+          Вы сможете изменить этот параметр при необходимости
+        </p>
+        <div className="flex py-2">
+          <div>
+            <input
+              onChange={changeSurveyCountAnswersForm}
+              className="cursor-pointer"
+              checked={surveyCountAnswers === "count"}
+              type="radio"
+              name="surveyCountAnswers"
+              value="count"
+            />
+            <label className="pl-2">Указать количество</label>
+          </div>
+          <div className="pl-4">
+            <input
+              onChange={changeSurveyCountAnswersForm}
+              className="cursor-pointer"
+              checked={surveyCountAnswers === "nocount"}
+              type="radio"
+              name="surveyCountAnswers"
+              value="nocount"
+            />
+            <label className="pl-2">Бесконечное число ответов</label>
           </div>
         </div>
       </div>
