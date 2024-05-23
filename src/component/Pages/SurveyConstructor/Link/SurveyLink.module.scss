@@ -33,19 +33,18 @@ button {
 }
 
 .survey_items {
-    width: 45%;
-    margin: 0 auto;
-    margin-top: 50px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 45%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.survey_item{
-    width: 350px;
+.survey_item {
+  width: 350px;
 }
 .survey_image {
-
 }
 .survey_image img {
   width: 350px;
@@ -53,8 +52,8 @@ button {
   object-fit: cover;
 }
 
-.survey_desc{
-    margin-bottom: 20px;
+.survey_desc {
+  margin-bottom: 20px;
 }
 
 .survey_name {

@@ -53,7 +53,7 @@ export default function SurveyLink() {
               </div>
             ))}
           </div>
-          <Button text={"Скопировать ссылку"} />
+          <Button text={"Скопировать ссылку на опрос"} />
         </div>
       </div>
     </div>
