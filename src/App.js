@@ -16,6 +16,7 @@ import NewGroup from "./component/Pages/Account/group/NewGroup.jsx";
 import { CreateSurvey } from "./component/Pages/CreateSurvey/CreateSurvey.jsx";
 import { SurveyConstructor } from "./component/Pages/SurveyConstructor/SurveyConstructor.jsx";
 import SurveyHome from "./component/Pages/SurveyConstructor/SurveyHome.jsx";
+import SurveyResult from "./component/Pages/SurveyConstructor/Result/SurveyResult.jsx";
 
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
             <Route path="oneGroup" element={<OneGroup />}></Route>
             <Route path="newGroup" element={<NewGroup />}></Route>
             <Route path="surveys/content/1" element={<SurveyConstructor />}></Route>
+            <Route path="surveys/result" element={<SurveyResult />}></Route>
+            <Route path="surveys/link" element={<SurveyResult />}></Route>
             
             
           </Routes>
