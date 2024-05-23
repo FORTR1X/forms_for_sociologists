@@ -5,4 +5,7 @@ export const useSurveyStore = create((set) => ({
   surveyDeadline: "unlimited",
   changeSurveyName: (newName) => set({surveyName: newName}),
   changeSurveyDeadline: (newDeadLine) => set({surveyDeadline: newDeadLine}),
+  changeSurveyMinTime: (newMinTime) => set({surveyMinTime: newMinTime}),
+  changeSurveyAttemptCount: (newAttempt) => set({surveyAttemptCount: newAttempt}),
 }))
+

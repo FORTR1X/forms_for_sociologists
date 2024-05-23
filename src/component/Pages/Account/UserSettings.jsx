@@ -5,7 +5,7 @@ import styles from "./UserSetting.module.scss";
 import Button from "./Button";
 
 function UserSettings() {
-  return (
+  return ( 
     <div className={styles.wrapper}>
       <UserHeader />
 
