@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { NavLink } from "react-router-dom";
+import { v4 as uuid } from "uuid";
 import UserHeader from "../../Account/UserHeader";
 import styles from "./SurveyLink.module.scss";
 import Button from "../../Account/Button";
@@ -16,6 +17,11 @@ const data = [
 export default function SurveyLink() {
   const [value, setValue] = useState("");
   const [copy, setCopy] = useState(false);
+
+  const id = uuid().slice(0, 11).replace(/-/g, "");
+  const [newId, setNewId] = useState("");
+
+  const currentUrl = window.location.href;
   return (
     <div>
       <UserHeader />
@@ -66,12 +72,19 @@ export default function SurveyLink() {
               {/* <i class="bi bi-link-45deg"></i> */}
               {/* <input type="text" onChange={(e) => setValue(e.target.value)} /> */}
               <CopyToClipboard text={value} onCopy={() => setCopy(true)}>
-                <button className={`${copy ? styles.copied : styles.copy}`}>
-                  {copy ? "Ссылка на опрос скопирована" : "Скопировать ссылку на опрос"}
+                <button
+                  className={`${copy ? styles.copied : styles.copy}`}
+                  onClick={() => setNewId(id)}
+                >
+                  {copy
+                    ? "Ссылка на опрос скопирована"
+                    : "Скопировать ссылку на опрос"}
                 </button>
               </CopyToClipboard>
             </div>
           </div>
+          <h3>{currentUrl}</h3>
+          <h3>{newId}</h3>
         </div>
       </div>
     </div>
