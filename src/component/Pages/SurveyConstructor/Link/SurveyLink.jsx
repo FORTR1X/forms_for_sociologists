@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import { NavLink } from "react-router-dom";
 import UserHeader from "../../Account/UserHeader";
 import styles from "./SurveyLink.module.scss";
@@ -13,6 +14,8 @@ const data = [
 ];
 
 export default function SurveyLink() {
+  const [value, setValue] = useState("");
+  const [copy, setCopy] = useState(false);
   return (
     <div>
       <UserHeader />
@@ -56,9 +59,20 @@ export default function SurveyLink() {
           </div>
 
           <Button text={"Скопировать ссылку на опрос"} />
+
+          <div className={styles.app}>
+            <div className={styles.input_group}>
+              <i class="bi bi-link-45deg"></i>
+              <input type="text" onChange={(e) => setValue(e.target.value)} />
+              <CopyToClipboard text={value} onCopy={() => setCopy(true)}>
+                <button className={`${copy ? styles.copied : styles.copy}`}>
+                  {copy ? "Copied" : "Copy"}
+                </button>
+              </CopyToClipboard>
+            </div>
+          </div>
         </div>
       </div>
-      <script src="script.js"></script>
     </div>
   );
 }
