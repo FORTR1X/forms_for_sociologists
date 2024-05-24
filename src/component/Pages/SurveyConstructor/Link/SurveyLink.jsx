@@ -58,15 +58,16 @@ export default function SurveyLink() {
             ))}
           </div>
 
-          <Button text={"Скопировать ссылку на опрос"} />
-
+          {/* <Button text={"Скопировать ссылку на опрос"} /> */}
+          {/* нужно при нажатии на кнопку копировать ссылку на опрос, Ариф сказал генерировать р
+          андомную строку по публичному id на каждый опрос, что с ней делать потом - хз */}
           <div className={styles.app}>
             <div className={styles.input_group}>
-              <i class="bi bi-link-45deg"></i>
-              <input type="text" onChange={(e) => setValue(e.target.value)} />
+              {/* <i class="bi bi-link-45deg"></i> */}
+              {/* <input type="text" onChange={(e) => setValue(e.target.value)} /> */}
               <CopyToClipboard text={value} onCopy={() => setCopy(true)}>
                 <button className={`${copy ? styles.copied : styles.copy}`}>
-                  {copy ? "Copied" : "Copy"}
+                  {copy ? "Ссылка на опрос скопирована" : "Скопировать ссылку на опрос"}
                 </button>
               </CopyToClipboard>
             </div>

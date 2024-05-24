@@ -81,7 +81,7 @@ button {
 }
 
 .input_group {
-  width: 30%;
+  /* width: 30%; */
   height: 50px;
   border-radius: 10px;
   background-color: white;
@@ -105,19 +105,55 @@ button {
 }
 
 .input_group button {
-  width: 100px;
-  height: 41px;
-  border-radius: 6px;
-  color: white;
-  font-size: 18px;
-  border: none;
-  outline: none;
+  outline: 2px solid $dark_green;
   cursor: pointer;
 }
 
-.copy {
+/* .copy {
   background-color: rgb(77, 144, 253);
-}
-.copied {
+} */
+/* .copied {
   background-color: rgb(39, 196, 82);
+} */
+
+.copy {
+  padding: 0.4em 1em;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 0.5em;
+  background-color: $white;
+  outline: 2px solid $dark_green;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  top: 0;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -10px;
+    cursor: pointer;
+    top: -1px;
+  }
+}
+
+.copied {
+  padding: 0.4em 1em;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 0.5em;
+  background-color: $white;
+  outline: 2px solid $dark_green;
+  text-align: center;
+  background-color: rgba(176, 243, 194, 0.321);
+
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  top: 0;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -10px;
+    cursor: pointer;
+    top: -1px;
+  }
 }
