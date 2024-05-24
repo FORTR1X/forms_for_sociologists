@@ -41,6 +41,8 @@ export default function SignInSignUp() {
                 type="text"
                 placeholder="Ваша почта"
                 name="user[email]"
+                required
+
               />
             </div>
             <div className={styles.inputField}>
@@ -50,6 +52,8 @@ export default function SignInSignUp() {
                 type="password"
                 placeholder="Ваш пароль"
                 name="user[password]"
+                required
+
               />
             </div>
             <input type="submit" value="Войти" className={styles.btn} />
@@ -95,15 +99,17 @@ export default function SignInSignUp() {
                 type="text"
                 placeholder="Ваше имя"
                 name="user[name]"
+                required
               />
             </div>
             <div className={styles.inputField}>
               <i className={styles.envelope}></i>
               <input
                 className={styles.inputS}
-                type="text"
+                type="email"
                 placeholder="Ваша почта"
                 name="user[email]"
+                required
               />
             </div>
             <div className={styles.inputField}>
@@ -113,6 +119,8 @@ export default function SignInSignUp() {
                 type="password"
                 placeholder="Ваш пароль"
                 name="user[password]"
+                required
+                minlength="6"
               />
             </div>
             <input type="submit" value="Регистрация" className={styles.btn} />
@@ -164,7 +172,7 @@ export default function SignInSignUp() {
           <div className={`${styles.panel} ${styles.rightPanel}`}>
             <div className={styles.content}>
               <h3 className={styles.panelTitle}>
-                Все еще не зарегистрированны?
+                Не зарегистрированны?
               </h3>
               <p className={styles.panelText}>
                 Создайте аккаунт или зайдите с помощью Google

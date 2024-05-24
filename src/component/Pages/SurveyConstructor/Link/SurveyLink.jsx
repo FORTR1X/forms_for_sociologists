@@ -83,8 +83,10 @@ export default function SurveyLink() {
               </CopyToClipboard>
             </div>
           </div>
-          <h3>{currentUrl}</h3>
-          <h3>{newId}</h3>
+          <h3>
+            {currentUrl}/{newId}
+          </h3>
+          
         </div>
       </div>
     </div>
