@@ -173,14 +173,6 @@ const allForms = [
         name: "",
         variants: "",
       },
-      {
-        name: "",
-        variants: "",
-      },
-      {
-        name: "",
-        variants: "",
-      },
     ],
   },
 ];
