@@ -75,7 +75,7 @@ export const SurveyConstructor = () => {
           onClick={() => {
             setOpen(true);
           }}
-          className="w-full text-4xl py-1 hover:text-white hover:bg-green-500 transition-all"
+          className="w-full text-4xl mb-6 py-1 hover:text-white hover:bg-emerald-400 rounded-xl transition-all"
         >
           +
         </button>
