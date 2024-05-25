@@ -5,42 +5,47 @@ import UserHeader from "../Account/UserHeader";
 import Button from "../Account/Button";
 import { NavLink } from "react-router-dom";
 
+import { useSurveyConstructorStore } from "./useSurveyConstructorStore";
+import { useSurveyStore } from "./../CreateSurvey/useSurveyStore";
+
+
+
 export const SurveyConstructor = () => {
   const [open, setOpen] = useState(false);
 
-  const forms = useSurveyConstructorStore((state) => state.forms)
-  const surveyData = useSurveyStore((get) => get)
+  const forms = useSurveyConstructorStore((state) => state.forms);
+  const surveyData = useSurveyStore((get) => get);
 
   const saveSurvey = async () => {
     const SURVEY = {
-      "survey": {
-          "name": surveyData.surveyName,
-          "questions_count": 2,
-          "actived": true,
-          "private": surveyData.surveyAnonymous,
-          "start_date": null,
-          "end_date": survetData.surveyDeadline,
-          "questions": [
-              {
-                  "number": 1,
-                  "type": "text",
-                  "text": "fav artist?"
-              },
-              {
-                  "number": 2,
-                  "type": "text",
-                  "text": "fav song?"
-              }
-          ]
-      }
-    }
+      survey: {
+        name: surveyData.surveyName,
+        questions_count: 2,
+        actived: true,
+        private: surveyData.surveyAnonymous,
+        start_date: null,
+        end_date: surveyData.surveyDeadline,
+        questions: [
+          {
+            number: 1,
+            type: "text",
+            text: "fav artist?",
+          },
+          {
+            number: 2,
+            type: "text",
+            text: "fav song?",
+          },
+        ],
+      },
+    };
 
-    await fetch('localhost:8000/surveys', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(SURVEY)
-    })
-  }
+    await fetch("localhost:8000/surveys", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(SURVEY),
+    });
+  };
 
   return (
     <>
@@ -74,7 +79,7 @@ export const SurveyConstructor = () => {
         >
           +
         </button>
-        <Button text={'Сохранить'} onClick={saveSurvey}/>
+        <Button text={"Сохранить"} onClick={saveSurvey} />
         {/* <button>Сохранить</button> */}
         <NewForm open={open} setOpen={setOpen} />
       </div>
