@@ -19,7 +19,7 @@ export const Input = ({parentId, form, index, isOneSubForm}) => {
     const handleRemoveSubForm = () => {
         removeSubForm(form.id, parentId)
     }
-
+ 
     return (
         <div className="p-2 flex justify-between items-center">
             <input type="text" placeholder={`${form.name} ${!isOneSubForm ? index + 1 : ""}`} value={form.variants} onChange={handleChangeForm} />
