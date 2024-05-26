@@ -1,0 +1,7 @@
+@import "~react-vis/dist/style";
+@import "~react-vis/dist/styles/legends";
+
+.rv-xy-plot__series--label-text {
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
